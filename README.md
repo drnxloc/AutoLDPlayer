@@ -10,7 +10,9 @@ Release Bao Gồm
 ### Nếu sử dụng cần cài thêm: KAutoHelpper Và Emgu.CV.World.dll
 
 # List Command
-0. param => name, index
+```js
+0. param => name, index. NameOrId => "Name LDPlayer Or Index LDPlayer"
+```
 
 1. Set Path LDPlayer
 ```js
@@ -20,5 +22,11 @@ Release Bao Gồm
 2. Manipulation Emulator
 ```js
     void Open(string param, string NameOrId)
-    ### Exam: Open("name", "ld0"); \n Open("index", "0");
+```
+```js
+    Exam:   Open("name", "ld0");
+            Open("index", "0");
+```
+
+```js
 ```
