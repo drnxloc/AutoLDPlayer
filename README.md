@@ -13,7 +13,7 @@ Release Bao Gồm
 ```js
 0. Note:
     param => name, index. NameOrId => "Name LDPlayer Or Index LDPlayer"
-    deviceID get form adb devices
+    deviceID get form "adb devices"
 ```
 
 1. Set Path LDPlayer
