@@ -129,7 +129,7 @@ void ExecuteLD(string cmd)
 
 string ExecuteLD_Result(string cmdCommand)
 ```
-## deviceID get form adb devices
+
 7. Directional
 ```js
 void Back(string deviceID)
@@ -143,3 +143,5 @@ void Menu(string deviceID)
 ```js
 void Tap_Img(string deviceID, Bitmap ImgFind)
 ```
+
+Note: deviceID get form adb devices
