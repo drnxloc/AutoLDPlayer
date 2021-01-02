@@ -48,9 +48,9 @@ namespace Auto_LDPlayer
             ExecuteLD("add --name " + Name);
         }
 
-        public void Copy(string Name)
+        public void Copy(string Name, string From_NameOrId)
         {
-            ExecuteLD(string.Format("copy --name {0} --from", Name));
+            ExecuteLD(string.Format("copy --name {0} --from {1}", Name, From_NameOrId));
         }
 
         public void Delete(string param, string NameOrId)
