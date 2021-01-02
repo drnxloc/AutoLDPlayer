@@ -18,7 +18,7 @@ Note:
 
 ```js
 0. Initialization
-   LDPlayer ldplayer = new LdPlayer();
+   LDPlayer ldplayer = new LDPlayer();
 ```
 
 1. Set Path LDPlayer
