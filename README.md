@@ -13,6 +13,7 @@ Release Bao Gồm
 ```js
 0. Note:
     param => name, index. NameOrId => "Name LDPlayer Or Index LDPlayer"
+    deviceID get form adb devices
 ```
 
 1. Set Path LDPlayer
@@ -143,5 +144,3 @@ void Menu(string deviceID)
 ```js
 void Tap_Img(string deviceID, Bitmap ImgFind)
 ```
-
-Note: deviceID get form adb devices
