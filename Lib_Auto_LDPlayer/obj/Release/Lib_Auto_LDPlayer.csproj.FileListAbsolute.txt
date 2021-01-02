@@ -1,0 +1,9 @@
+P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\bin\Release\Lib_Auto_LDPlayer.dll
+P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\bin\Release\Lib_Auto_LDPlayer.pdb
+P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\bin\Release\Emgu.CV.World.dll
+P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\bin\Release\KAutoHelper.dll
+P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Lib_Auto_LDPlayer.csprojAssemblyReference.cache
+P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Lib_Auto_LDPlayer.csproj.CoreCompileInputs.cache
+P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Lib_Auto_LDPlayer.csproj.CopyComplete
+P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Lib_Auto_LDPlayer.dll
+P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Lib_Auto_LDPlayer.pdb
