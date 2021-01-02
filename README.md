@@ -1,5 +1,5 @@
 # AutoLDPlayer
-Auto ADB LDPlayer v1.0.0
+Auto ADB LDPlayer
 Release Bao Gồm
 - KAutoHelpper
 - Emgu.CV.World.dll
