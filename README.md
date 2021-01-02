@@ -24,9 +24,13 @@ Release Bao Gồm
 2. Manipulation Emulator
 ```js
     void Open(string param, string NameOrId)
+
     void Open_App(string param, string NameOrId, string Package_Name)
+
     void Close(string param, string NameOrId)
+
     void CloseAll()
+
     void ReBoot(string param, string NameOrId)
 ```
 ```js
@@ -36,8 +40,11 @@ Release Bao Gồm
 3. Custom Emulator
 ```js
 void Create(string Name)
+
 void Copy(string Name)
+
 void Delete(string param, string NameOrId)
+
 void ReName(string param, string NameOrId, string title_new)
 ```
 
@@ -117,10 +124,13 @@ void Golabal_Config(string param, string NameOrId, string fps, string audio, str
 5. Get List Devices
 ```js
 List<string> GetDevices()
+
 List<string> GetDevices_Running()
+
 bool IsDevice_Running(string param, string NameOrId)
 
 List<Info_Devices> GetDevices2()
+
 List<Info_Devices> GetDevices2_Running()
 ```
 
