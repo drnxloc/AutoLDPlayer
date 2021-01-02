@@ -21,9 +21,9 @@ Note:
    LDPlayer ldplayer = new LDPlayer();
 ```
 
-1. Set Path LDPlayer
+1. Set Path LDPlayer "ldconsole.exe"
 ```js
-    LDPlayer.pathLD = "Your Path LD";
+    LDPlayer.pathLD = "Your Path ldconsole.exe";
 ```
 
 2. Manipulation Emulator
