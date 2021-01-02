@@ -25,7 +25,7 @@ Release Bao Gồm
 ```js
     void Open(string param, string NameOrId)
 
-    void Open_App(string param, string NameOrId, string Package_Name)
+    void Open_App(string param, string NameOrId, string Package_Name) //Mở LD cùng app khi chạy
 
     void Close(string param, string NameOrId)
 
@@ -50,9 +50,9 @@ void ReName(string param, string NameOrId, string title_new)
 
 4. App 
 ```js
-void InstallApp_File(string param, string NameOrId, string File_Name)
+void InstallApp_File(string param, string NameOrId, string File_Name) //File_Name trỏ tới file apk
 
-void InstallApp_Package(string param, string NameOrId, string Package_Name)
+void InstallApp_Package(string param, string NameOrId, string Package_Name) //Cài qua LD Store, hơi dỏm, tốt nhất tự cài apk
 
 void UnInstallApp(string param, string NameOrId, string Package_Name)
 
@@ -63,7 +63,7 @@ void KillApp(string param, string NameOrId, string Package_Name)
 
 5. Orther
 ```js
-void Locate(string param, string NameOrId, string Lng, string Lat)
+void Locate(string param, string NameOrId, string Lng, string Lat) //Set Toạ Độ GPS
 ```
 
 ```js
@@ -102,11 +102,11 @@ void Action(string param, string NameOrId, string key, string value)
 
 void Scan(string param, string NameOrId, string file_path)
 
-void SortWnd()
+void SortWnd() //Sắp Xếp Tab Giả Lập
 
-void zoomIn()
+void zoomIn(string param, string NameOrId) //Phóng to
 
-void zoomOut()
+void zoomOut(string param, string NameOrId) //Phóng nhỏ lại
 
 void Pull(string param, string NameOrId, string remote_file_path, string local_file_path)
 
