@@ -111,7 +111,7 @@ void RestoreApp(string param, string NameOrId, string Package_Name, string file_
 ```js
 void Golabal_Config(string param, string NameOrId, string fps, string audio, string fast_play, string clean_mode)
     [--fps <0~60>] [--audio <1 | 0>] [--fastplay <1 | 0>] [--cleanmode <1 | 0>]
-    Exam: Golabal_Config("name", "0", "60", "0", "0", "0");
+    Exam: Golabal_Config("name", "ld0", "60", "0", "0", "0");
 ```
 5. Get List Devices
 ```js
