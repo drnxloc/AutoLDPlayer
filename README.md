@@ -1,0 +1,2 @@
+# AutoLDPlayer
+Auto ADB LDPlayer
