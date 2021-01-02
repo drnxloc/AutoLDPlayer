@@ -7,6 +7,9 @@ Release Bao Gồm
 
 # Nuget
 ### Nuget: https://www.nuget.org/packages/Auto_LDPlayer
+```js
+PM> Install-Package Auto_LDPlayer -Version 1.0.1.1
+```
 ### Nếu sử dụng cần cài thêm: KAutoHelpper Và Emgu.CV.World.dll
 
 # List Command
@@ -46,7 +49,7 @@ Note:
 ```js
 void Create(string Name)
 
-void Copy(string Name)
+void Copy(string Name, string From_NameOrId)
 
 void Delete(string param, string NameOrId)
 
