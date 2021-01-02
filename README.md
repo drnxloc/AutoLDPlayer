@@ -6,7 +6,7 @@ Release Bao Gồm
 - Auto_LDPlayer.dll
 
 # Nuget
-### Nuget: `https://www.nuget.org/packages/Auto_LDPlayer/`
+### Nuget: `<a href="https://www.nuget.org/packages/Auto_LDPlayer/" target="_blank"></a></a>`
 ### Nếu sử dụng cần cài thêm: KAutoHelpper Và Emgu.CV.World.dll
 
 # List Command
