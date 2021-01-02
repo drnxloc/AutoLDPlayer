@@ -158,14 +158,14 @@ namespace Auto_LDPlayer
             ExecuteLD("sortWnd");
         }
 
-        public void zoomIn()
+        public void zoomIn(string param, string NameOrId)
         {
-            ExecuteLD("zoomIn");
+            ExecuteLD(string.Format("zoomIn --{0} {1}", param, NameOrId));
         }
 
-        public void zoomOut()
+        public void zoomOut(string param, string NameOrId)
         {
-            ExecuteLD("zoomOut");
+            ExecuteLD(string.Format("zoomOut --{0} {1}", param, NameOrId));
         }
 
         public void Pull(string param, string NameOrId, string remote_file_path, string local_file_path)
