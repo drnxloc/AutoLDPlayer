@@ -5,8 +5,8 @@ Release Bao Gồm
 - Emgu.CV.World.dll
 - Auto_LDPlayer.dll
 
-#Nuget
-###Nuget: `https://www.nuget.org/packages/Auto_LDPlayer/`
-###Nếu sử dụng cần cài thêm: KAutoHelpper Và Emgu.CV.World.dll
+# Nuget
+### Nuget: `https://www.nuget.org/packages/Auto_LDPlayer/`
+### Nếu sử dụng cần cài thêm: KAutoHelpper Và Emgu.CV.World.dll
 
-#List Command
+# List Command
