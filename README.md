@@ -11,9 +11,14 @@ Release Bao Gồm
 
 # List Command
 ```js
-0. Note:
+Note:
     param => name, index. NameOrId => "Name LDPlayer Or Index LDPlayer"
     deviceID get form cmd "adb devices"
+```
+
+```js
+0. Initialization
+   LDPlayer ldplayer = new LdPlayer();
 ```
 
 1. Set Path LDPlayer
