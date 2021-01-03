@@ -22,8 +22,8 @@ Note:
     LDPlayer.pathLD = "Your Path ldconsole.exe";
 ```
 
-```js
 1. Initialization
+```js
    LDPlayer ldplayer = new LDPlayer();
 ```
 
