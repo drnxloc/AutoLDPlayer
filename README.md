@@ -40,8 +40,8 @@ Note:
     void ReBoot(string param, string NameOrId)
 ```
 ```js
-    Exam:   Open("name", "ld0");
-            Open("index", "0");
+    Exam:   ldplayer.Open("name", "ld0");
+            ldplayer.Open("index", "0");
 ```
 3. Custom Emulator
 ```js
@@ -89,7 +89,7 @@ void Change_Property(string param, string NameOrId, string cmd)
     [--autorotate < 1 | 0 >]
     [--lockwindow < 1 | 0 >]
 
-    Exam:   Change_Property("name", "ld0", " --cpu 1 --memory 1024 --imei 123456789");
+    Exam:   ldplayer.Change_Property("name", "ld0", " --cpu 1 --memory 1024 --imei 123456789");
 ```
 ```js
 void SetProp(string param, string NameOrId, string key, string value)
@@ -125,7 +125,7 @@ void RestoreApp(string param, string NameOrId, string Package_Name, string file_
 ```js
 void Golabal_Config(string param, string NameOrId, string fps, string audio, string fast_play, string clean_mode)
     [--fps <0~60>] [--audio <1 | 0>] [--fastplay <1 | 0>] [--cleanmode <1 | 0>]
-    Exam: Golabal_Config("name", "ld0", "60", "0", "0", "0");
+    Exam: ldplayer.Golabal_Config("name", "ld0", "60", "0", "0", "0");
 ```
 5. Get List Devices
 ```js
