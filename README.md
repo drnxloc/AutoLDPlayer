@@ -17,15 +17,14 @@ Note:
     param => name, index. NameOrId => "Name LDPlayer Or Index LDPlayer"
     deviceID get form cmd "adb devices"
 ```
-
-```js
-0. Initialization
-   LDPlayer ldplayer = new LDPlayer();
-```
-
-1. Set Path LDPlayer "ldconsole.exe"
+0. Set Path LDPlayer "ldconsole.exe"
 ```js
     LDPlayer.pathLD = "Your Path ldconsole.exe";
+```
+
+```js
+1. Initialization
+   LDPlayer ldplayer = new LDPlayer();
 ```
 
 2. Manipulation Emulator
