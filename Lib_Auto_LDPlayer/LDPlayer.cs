@@ -343,5 +343,16 @@ namespace Auto_LDPlayer
             }
             //MessageBox.Show("Tìm không ra");
         }
+
+        //Change Proxy
+        public void Change_Proxy(string deviceID, string ip_proxy, string port_proxy)
+        {
+            ADBHelper.ExecuteCMD(string.Format("adb -s {0} shell settings put global http_proxy {1}:{2}", deviceID, ip_proxy, port_proxy));
+        }
+
+        public void Remove_Proxy(string deviceID)
+        {
+            ADBHelper.ExecuteCMD(string.Format("adb -s {0} shell settings put global http_proxy :0", deviceID));
+        }
     }
 }

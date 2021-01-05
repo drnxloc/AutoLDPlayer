@@ -15,7 +15,7 @@ PM> Install-Package Auto_LDPlayer
 ```js
 Note:
     param => name, index. NameOrId => "Name LDPlayer Or Index LDPlayer"
-    deviceID get form cmd "adb devices"
+    deviceID get form cmd "adb devices" or used void "GetDevices2_Running()" return the variable "adb_id"
 ```
 0. Set Path LDPlayer "ldconsole.exe"
 ```js
@@ -159,4 +159,11 @@ void Menu(string deviceID)
 8. Tap with OpenCV
 ```js
 void Tap_Img(string deviceID, Bitmap ImgFind)
+```
+
+9. Change Proxy
+```js
+    void Change_Proxy(string deviceID, string ip_proxy, string port_proxy)
+
+    void Remove_Proxy(string deviceID)
 ```

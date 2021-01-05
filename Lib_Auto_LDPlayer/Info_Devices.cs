@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Auto_LDPlayer
 {
-    public class Info_Devices
+    public struct Info_Devices
     {
         public int index;
         public string name;

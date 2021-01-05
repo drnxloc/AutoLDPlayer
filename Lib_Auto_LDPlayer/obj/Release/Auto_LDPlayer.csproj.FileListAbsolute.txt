@@ -6,3 +6,4 @@ P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.
 P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.csproj.CopyComplete
 P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.dll
 P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.pdb
+P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.csprojAssemblyReference.cache
