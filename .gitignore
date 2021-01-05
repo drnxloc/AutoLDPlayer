@@ -3,3 +3,5 @@ Lib_Auto_LDPlayer/bin/Release/Release.zip
 Lib_Auto_LDPlayer/nuget.exe
 *.nuspec
 *.nupkg
+Lib_Auto_LDPlayer/bin/Release
+Lib_Auto_LDPlayer/bin/Debug
