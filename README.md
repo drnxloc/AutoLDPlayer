@@ -19,7 +19,9 @@ Note:
 ```
 0. Set Path LDPlayer "ldconsole.exe"
 ```js
-    LDPlayer.pathLD = "Your Path ldconsole.exe";
+    LDPlayer.pathLD = "Your Path ldconsole.exe"; //VD: "C:\LDPlayer\LDPlayer4.0\ldconsole.exe"
+    //Set ADB Your Path
+    ADBHelper.SetADBFolderPath(@"C:\LDPlayer\LDPlayer4.0");
 ```
 
 1. Initialization
