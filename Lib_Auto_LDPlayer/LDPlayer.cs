@@ -11,7 +11,7 @@ namespace Auto_LDPlayer
 {
     public class LDPlayer
     {
-        public static string pathLD = @"E:\LDPlayer\LDPlayer4.0\ldconsole.exe";
+        public static string pathLD = @"C:\LDPlayer\LDPlayer4.0\ldconsole.exe";
         //----------------------Tương Tác Tab Giả Lập--------------------------------//
 
         //Nhóm 1 - Thao Tác
@@ -199,6 +199,8 @@ namespace Auto_LDPlayer
             string[] arr = ExecuteLD_Result("list").Trim().Split('\n');
             for (int i = 0; i < arr.Length; i++)
             {
+                if (arr[i] == "")
+                    return new List<string>();
                 arr[i] = arr[i].Trim();
             }
             //System.Windows.Forms.MessageBox.Show(string.Join("|", arr));
@@ -210,6 +212,8 @@ namespace Auto_LDPlayer
             string[] arr = ExecuteLD_Result("runninglist").Trim().Split('\n');
             for (int i = 0; i < arr.Length; i++)
             {
+                if (arr[i] == "")
+                    return new List<string>();
                 arr[i] = arr[i].Trim();
             }
             //System.Windows.Forms.MessageBox.Show(string.Join("|", arr));
@@ -226,20 +230,27 @@ namespace Auto_LDPlayer
 
         public List<Info_Devices> GetDevices2()
         {
-            List<Info_Devices> listLDPlayer = new List<Info_Devices>();
-            string[] arr = ExecuteLD_Result("list2").Trim().Split('\n');
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Info_Devices devices = new Info_Devices();
-                string[] aDetail = arr[i].Trim().Split(',');
-                devices.index = int.Parse(aDetail[0]);
-                devices.name = aDetail[1];
-                devices.adb_id = "-1";
-                listLDPlayer.Add(devices);
+            try
+            { 
+                List<Info_Devices> listLDPlayer = new List<Info_Devices>();
+                string[] arr = ExecuteLD_Result("list2").Trim().Split('\n');
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    Info_Devices devices = new Info_Devices();
+                    string[] aDetail = arr[i].Trim().Split(',');
+                    devices.index = int.Parse(aDetail[0]);
+                    devices.name = aDetail[1];
+                    devices.adb_id = "-1";
+                    listLDPlayer.Add(devices);
+                }
+                //System.Windows.Forms.MessageBox.Show(string.Join("\n", arr));
+                return listLDPlayer;
             }
-            //System.Windows.Forms.MessageBox.Show(string.Join("\n", arr));
-            return listLDPlayer;
-        }
+            catch
+            {
+                return new List<Info_Devices>();
+            }
+}
 
         public List<Info_Devices> GetDevices2_Running()
         {

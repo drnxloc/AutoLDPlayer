@@ -33,10 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Emgu.CV.World">
-      <HintPath>..\..\..\Library\KAutoHelper V2\Dùng xử lý ảnh\Emgu.CV.World.dll</HintPath>
+      <HintPath>D:\VS2019\Test App LDPlayer\Test App LDPlayer\bin\Debug\Emgu.CV.World.dll</HintPath>
     </Reference>
     <Reference Include="KAutoHelper">
-      <HintPath>..\..\..\Library\KAutoHelper V2\KAutoHelper.dll</HintPath>
+      <HintPath>D:\VS2019\Test App LDPlayer\Test App LDPlayer\bin\Debug\KAutoHelper.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />

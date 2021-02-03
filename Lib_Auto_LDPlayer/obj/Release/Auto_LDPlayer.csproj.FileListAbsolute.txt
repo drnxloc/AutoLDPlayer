@@ -7,3 +7,12 @@ P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.
 P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.dll
 P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.pdb
 P:\Project-CSharp\Lib_Auto_LDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.csprojAssemblyReference.cache
+C:\Users\Drnxloc\Documents\GitHub\AutoLDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.csprojAssemblyReference.cache
+C:\Users\Drnxloc\Documents\GitHub\AutoLDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.csproj.CoreCompileInputs.cache
+C:\Users\Drnxloc\Documents\GitHub\AutoLDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.dll
+C:\Users\Drnxloc\Documents\GitHub\AutoLDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.pdb
+C:\Users\Drnxloc\Documents\GitHub\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\Auto_LDPlayer.dll
+C:\Users\Drnxloc\Documents\GitHub\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\Auto_LDPlayer.pdb
+C:\Users\Drnxloc\Documents\GitHub\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\Emgu.CV.World.dll
+C:\Users\Drnxloc\Documents\GitHub\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\KAutoHelper.dll
+C:\Users\Drnxloc\Documents\GitHub\AutoLDPlayer\Lib_Auto_LDPlayer\obj\Release\Auto_LDPlayer.csproj.CopyComplete
