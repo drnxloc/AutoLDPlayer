@@ -170,12 +170,12 @@ namespace Auto_LDPlayer
 
         public void Pull(string param, string NameOrId, string remote_file_path, string local_file_path)
         {
-            ExecuteLD(string.Format(@"pull --{0} {1} --remote {2} --local ""{3}""", param, NameOrId, remote_file_path, local_file_path));
+            ExecuteLD(string.Format(@"pull --{0} {1} --remote ""{2}"" --local ""{3}""", param, NameOrId, remote_file_path, local_file_path));
         }
 
         public void Push(string param, string NameOrId, string remote_file_path, string local_file_path)
         {
-            ExecuteLD(string.Format(@"push --{0} {1} --remote {2} --local ""{3}""", param, NameOrId, remote_file_path, local_file_path));
+            ExecuteLD(string.Format(@"push --{0} {1} --remote ""{2}"" --local ""{3}""", param, NameOrId, remote_file_path, local_file_path));
         }
 
         public void BackupApp(string param, string NameOrId, string Package_Name, string file_path)
