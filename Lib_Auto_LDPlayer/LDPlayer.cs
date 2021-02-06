@@ -67,7 +67,7 @@ namespace Auto_LDPlayer
 
         public void InstallApp_File(string param, string NameOrId, string File_Name)
         {
-            ExecuteLD(string.Format("installapp --{0} {1} --filename {2}", param, NameOrId, File_Name));
+            ExecuteLD(string.Format(@"installapp --{0} {1} --filename ""{2}""", param, NameOrId, File_Name));
         }
 
         public void InstallApp_Package(string param, string NameOrId, string Package_Name)
@@ -135,12 +135,12 @@ namespace Auto_LDPlayer
 
         public void Backup(string param, string NameOrId, string file_path)
         {
-            ExecuteLD(string.Format("backup --{0} {1} --file {2}", param, NameOrId, file_path));
+            ExecuteLD(string.Format(@"backup --{0} {1} --file ""{2}""", param, NameOrId, file_path));
         }
 
         public void Restore(string param, string NameOrId, string file_path)
         {
-            ExecuteLD(string.Format("restore --{0} {1} --file {2}", param, NameOrId, file_path));
+            ExecuteLD(string.Format(@"restore --{0} {1} --file ""{2}""", param, NameOrId, file_path));
         }
 
         public void Action(string param, string NameOrId, string key, string value)
@@ -180,12 +180,12 @@ namespace Auto_LDPlayer
 
         public void BackupApp(string param, string NameOrId, string Package_Name, string file_path)
         {
-            ExecuteLD(string.Format("backupapp --{0} {1} --packagename {2} --file {3}", param, NameOrId, Package_Name, file_path));
+            ExecuteLD(string.Format(@"backupapp --{0} {1} --packagename {2} --file ""{3}""", param, NameOrId, Package_Name, file_path));
         }
 
         public void RestoreApp(string param, string NameOrId, string Package_Name, string file_path)
         {
-            ExecuteLD(string.Format("restoreapp --{0} {1} --packagename {2} --file {3}", param, NameOrId, Package_Name, file_path));
+            ExecuteLD(string.Format(@"restoreapp --{0} {1} --packagename {2} --file ""{3}""", param, NameOrId, Package_Name, file_path));
         }
 
         public void Golabal_Config(string param, string NameOrId, string fps, string audio, string fast_play, string clean_mode)
