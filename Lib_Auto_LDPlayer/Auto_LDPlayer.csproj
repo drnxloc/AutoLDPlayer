@@ -32,11 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>C:\Users\Drnxloc\Downloads\Update KautoHelper\Emgu.CV.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Emgu.CV.World">
-      <HintPath>D:\VS2019\Test App LDPlayer\Test App LDPlayer\bin\Debug\Emgu.CV.World.dll</HintPath>
+      <HintPath>C:\Users\Drnxloc\Downloads\Update KautoHelper\Emgu.CV.World.dll</HintPath>
     </Reference>
     <Reference Include="KAutoHelper">
-      <HintPath>D:\VS2019\Test App LDPlayer\Test App LDPlayer\bin\Debug\KAutoHelper.dll</HintPath>
+      <HintPath>C:\Users\Drnxloc\Downloads\Update KautoHelper\KAutoHelper.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -48,9 +51,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>C:\Users\Drnxloc\Downloads\Update KautoHelper\ZedGraph.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Info_Devices.cs" />
+    <Compile Include="LDevice.cs" />
     <Compile Include="LDPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

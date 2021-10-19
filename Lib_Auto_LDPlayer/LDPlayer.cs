@@ -228,19 +228,24 @@ namespace Auto_LDPlayer
             return false;
         }
 
-        public List<Info_Devices> GetDevices2()
+        public List<LDevice> GetDevices2()
         {
             try
-            { 
-                List<Info_Devices> listLDPlayer = new List<Info_Devices>();
+            {
+                List<LDevice> listLDPlayer = new List<LDevice>();
                 string[] arr = ExecuteLD_Result("list2").Trim().Split('\n');
                 for (int i = 0; i < arr.Length; i++)
                 {
-                    Info_Devices devices = new Info_Devices();
+                    LDevice devices = new LDevice();
                     string[] aDetail = arr[i].Trim().Split(',');
                     devices.index = int.Parse(aDetail[0]);
                     devices.name = aDetail[1];
                     devices.adb_id = "-1";
+                    devices.topHandle = new IntPtr(Convert.ToInt32(aDetail[2], 16));
+                    devices.bindHandle = new IntPtr(Convert.ToInt32(aDetail[3], 16));
+                    devices.androidState = int.Parse(aDetail[4]);
+                    devices.dnplayerPID = int.Parse(aDetail[5]);
+                    devices.vboxPID = int.Parse(aDetail[6]);
                     listLDPlayer.Add(devices);
                 }
                 //System.Windows.Forms.MessageBox.Show(string.Join("\n", arr));
@@ -248,25 +253,30 @@ namespace Auto_LDPlayer
             }
             catch
             {
-                return new List<Info_Devices>();
+                return new List<LDevice>();
             }
-}
+        }
 
-        public List<Info_Devices> GetDevices2_Running()
+        public List<LDevice> GetDevices2_Running()
         {
             try
             {
                 int j = 0;
                 List<string> list_adb_id = ADBHelper.GetDevices();
-                List<Info_Devices> listLDPlayer = new List<Info_Devices>();
+                List<LDevice> listLDPlayer = new List<LDevice>();
                 List<string> device_running = GetDevices_Running();
                 string[] arr = ExecuteLD_Result("list2").Trim().Split('\n');
                 for (int i = 0; i < arr.Length; i++)
                 {
-                    Info_Devices devices = new Info_Devices();
+                    LDevice devices = new LDevice();
                     string[] aDetail = arr[i].Trim().Split(',');
                     devices.index = int.Parse(aDetail[0]);
                     devices.name = aDetail[1];
+                    devices.topHandle = new IntPtr(Convert.ToInt32(aDetail[2], 16));
+                    devices.bindHandle = new IntPtr(Convert.ToInt32(aDetail[3], 16));
+                    devices.androidState = int.Parse(aDetail[4]);
+                    devices.dnplayerPID = int.Parse(aDetail[5]);
+                    devices.vboxPID = int.Parse(aDetail[6]);
                     if (device_running.Contains(devices.name))
                     {
                         devices.adb_id = list_adb_id[j];
@@ -278,7 +288,7 @@ namespace Auto_LDPlayer
             }
             catch
             {
-                return new List<Info_Devices>();
+                return new List<LDevice>();
             }
             //System.Windows.Forms.MessageBox.Show(string.Join("\n", arr));
         }
