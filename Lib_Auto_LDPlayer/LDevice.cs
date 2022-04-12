@@ -1,20 +1,57 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Auto_LDPlayer
 {
-    public struct LDevice
+    public class LDevice
     {
         public int index;
         public string name;
-        public string adb_id;
         public IntPtr topHandle;
         public IntPtr bindHandle;
         public int androidState;
         public int dnplayerPID;
         public int vboxPID;
+
+        public int Index
+        {
+            get => index;
+            set => index = value;
+        }
+
+        public string Name
+        {
+            get => name;
+            set => name = value;
+        }
+
+        public IntPtr TopHandle
+        {
+            get => topHandle;
+            set => topHandle = value;
+        }
+
+        public IntPtr BindHandle
+        {
+            get => bindHandle;
+            set => bindHandle = value;
+        }
+
+        public int AndroidState
+        {
+            get => androidState;
+            set => androidState = value;
+        }
+
+        public int DnplayerPid
+        {
+            get => dnplayerPID;
+            set => dnplayerPID = value;
+        }
+
+        public int VboxPid
+        {
+            get => vboxPID;
+            set => vboxPID = value;
+        }
     }
 }
