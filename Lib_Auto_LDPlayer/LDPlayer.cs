@@ -257,7 +257,7 @@ namespace Auto_LDPlayer
             }
             catch
             {
-                return new List<LDevice>();
+                return null;
             }
         }
 
@@ -287,7 +287,7 @@ namespace Auto_LDPlayer
             }
             catch
             {
-                return new List<LDevice>();
+                return null;
             }
             //System.Windows.Forms.MessageBox.Show(string.Join("\n", arr));
         }
