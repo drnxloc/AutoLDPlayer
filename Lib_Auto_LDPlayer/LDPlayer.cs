@@ -1,103 +1,104 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Threading;
 using KAutoHelper;
 
 namespace Auto_LDPlayer
 {
-    public class LDPlayer
+    public class LdPlayer
     {
-        public static string pathLD = @"C:\LDPlayer\LDPlayer4.0\ldconsole.exe";
+        public static string PathLd = @"C:\LDPlayer\LDPlayer4.0\ldconsole.exe";
+
         //----------------------Tương Tác Tab Giả Lập--------------------------------//
 
         //Nhóm 1 - Thao Tác
 
-        public void Open(string param, string NameOrId)
+        public static void Open(string param, string nameOrId)
         {
-            ExecuteLD(string.Format("launch --{0} {1}", param, NameOrId));
+            ExecuteLd($"launch --{param} {nameOrId}");
         }
 
-        public void Open_App(string param, string NameOrId, string Package_Name)
+        public static void Open_App(string param, string nameOrId, string packageName)
         {
-            ExecuteLD(string.Format("launchex --{0} {1} --packagename {2}", param, NameOrId, Package_Name));
+            ExecuteLd($"launchex --{param} {nameOrId} --packagename {packageName}");
         }
 
-        public void Close(string param, string NameOrId)
+        public static void Close(string param, string nameOrId)
         {
-            ExecuteLD(string.Format("quit --{0} {1}", param, NameOrId));
+            ExecuteLd($"quit --{param} {nameOrId}");
         }
 
-        public void CloseAll()
+        public static void CloseAll()
         {
-            ExecuteLD("quitall");
+            ExecuteLd("quitall");
         }
 
-        public void ReBoot(string param, string NameOrId)
+        public static void ReBoot(string param, string nameOrId)
         {
-            ExecuteLD(string.Format("reboot --{0} {1}", param, NameOrId));
+            ExecuteLd($"reboot --{param} {nameOrId}");
         }
 
         //Nhóm 2 - Tuỳ Chỉnh Thêm
 
-        public void Create(string Name)
+        public static void Create(string name)
         {
-            ExecuteLD("add --name " + Name);
+            ExecuteLd("add --name " + name);
         }
 
-        public void Copy(string Name, string From_NameOrId)
+        public static void Copy(string name, string fromNameOrId)
         {
-            ExecuteLD(string.Format("copy --name {0} --from {1}", Name, From_NameOrId));
+            ExecuteLd($"copy --name {name} --from {fromNameOrId}");
         }
 
-        public void Delete(string param, string NameOrId)
+        public static void Delete(string param, string nameOrId)
         {
-            ExecuteLD(string.Format("remove --{0} {1}", param, NameOrId));
+            ExecuteLd($"remove --{param} {nameOrId}");
         }
 
-        public void ReName(string param, string NameOrId, string title_new)
+        public static void ReName(string param, string nameOrId, string titleNew)
         {
-            ExecuteLD(string.Format("rename --{0} {1} --title {2}", param, NameOrId, title_new));
+            ExecuteLd($"rename --{param} {nameOrId} --title {titleNew}");
         }
 
         //Nhóm 3 - Change Setting
 
-        public void InstallApp_File(string param, string NameOrId, string File_Name)
+        public static void InstallApp_File(string param, string nameOrId, string fileName)
         {
-            ExecuteLD(string.Format(@"installapp --{0} {1} --filename ""{2}""", param, NameOrId, File_Name));
+            ExecuteLd($@"installapp --{param} {nameOrId} --filename ""{fileName}""");
         }
 
-        public void InstallApp_Package(string param, string NameOrId, string Package_Name)
+        public static void InstallApp_Package(string param, string nameOrId, string packageName)
         {
-            ExecuteLD(string.Format("installapp --{0} {1} --packagename {2}", param, NameOrId, Package_Name));
+            ExecuteLd($"installapp --{param} {nameOrId} --packagename {packageName}");
         }
 
-        public void UnInstallApp(string param, string NameOrId, string Package_Name)
+        public static void UnInstallApp(string param, string nameOrId, string packageName)
         {
-            ExecuteLD(string.Format("uninstallapp --{0} {1} --packagename {2}", param, NameOrId, Package_Name));
+            ExecuteLd($"uninstallapp --{param} {nameOrId} --packagename {packageName}");
         }
 
-        public void RunApp(string param, string NameOrId, string Package_Name)
+        public static void RunApp(string param, string nameOrId, string packageName)
         {
-            ExecuteLD(string.Format("runapp --{0} {1} --packagename {2}", param, NameOrId, Package_Name));
+            ExecuteLd($"runapp --{param} {nameOrId} --packagename {packageName}");
         }
 
-        public void KillApp(string param, string NameOrId, string Package_Name)
+        public static void KillApp(string param, string nameOrId, string packageName)
         {
-            ExecuteLD(string.Format("killapp --{0} {1} --packagename {2}", param, NameOrId, Package_Name));
+            ExecuteLd($"killapp --{param} {nameOrId} --packagename {packageName}");
         }
 
-        public void Locate(string param, string NameOrId, string Lng, string Lat)
+        public static void Locate(string param, string nameOrId, string lng, string lat)
         {
-            ExecuteLD(string.Format("locate --{0} {1} --LLI {2},{3}", param, NameOrId, Lng, Lat));
+            ExecuteLd($"locate --{param} {nameOrId} --LLI {lng},{lat}");
         }
 
-        public void Change_Property(string param, string NameOrId, string cmd)
+        public static void Change_Property(string param, string nameOrId, string cmd)
         {
-            ExecuteLD(string.Format("modify --{0} {1} {2}", param, NameOrId, cmd));
+            ExecuteLd($"modify --{param} {nameOrId} {cmd}");
             //[--resolution ]
             //[--cpu < 1 | 2 | 3 | 4 >]
             //[--memory < 512 | 1024 | 2048 | 4096 | 8192 >]
@@ -113,143 +114,146 @@ namespace Auto_LDPlayer
             //[--lockwindow < 1 | 0 >]
         }
 
-        public void SetProp(string param, string NameOrId, string key, string value)
+        public static void SetProp(string param, string nameOrId, string key, string value)
         {
-            ExecuteLD(string.Format("setprop --{0} {1} --key {2} --value {3}", param, NameOrId, key, value));
+            ExecuteLd($"setprop --{param} {nameOrId} --key {key} --value {value}");
         }
 
-        public string GetProp(string param, string NameOrId, string key)
+        public static string GetProp(string param, string nameOrId, string key)
         {
-            return ExecuteLD_Result(string.Format("getprop --{0} {1} --key {2}", param, NameOrId, key));
+            return ExecuteLdForResult($"getprop --{param} {nameOrId} --key {key}");
         }
 
-        public string ADB(string param, string NameOrId, string cmd)
+        public static string Adb(string param, string nameOrId, string cmd, int timeout = 10000, int retry = 1)
         {
-            return ExecuteLD_Result(string.Format("adb --{0} {1} --command {2}", param, NameOrId, cmd));
+            return ExecuteLdForResult($"adb --{param} \"{nameOrId}\" --command \"{cmd}\"", timeout,
+                retry);
         }
 
-        public void DownCPU(string param, string NameOrId, string rate)
+        public static void DownCpu(string param, string nameOrId, string rate)
         {
-            ExecuteLD(string.Format("downcpu --{0} {1} --rate {2}", param, NameOrId, rate));
+            ExecuteLd($"downcpu --{param} {nameOrId} --rate {rate}");
         }
 
-        public void Backup(string param, string NameOrId, string file_path)
+        public static void Backup(string param, string nameOrId, string filePath)
         {
-            ExecuteLD(string.Format(@"backup --{0} {1} --file ""{2}""", param, NameOrId, file_path));
+            ExecuteLd($@"backup --{param} {nameOrId} --file ""{filePath}""");
         }
 
-        public void Restore(string param, string NameOrId, string file_path)
+        public static void Restore(string param, string nameOrId, string filePath)
         {
-            ExecuteLD(string.Format(@"restore --{0} {1} --file ""{2}""", param, NameOrId, file_path));
+            ExecuteLd($@"restore --{param} {nameOrId} --file ""{filePath}""");
         }
 
-        public void Action(string param, string NameOrId, string key, string value)
+        public static void Action(string param, string nameOrId, string key, string value)
         {
-            ExecuteLD(string.Format("action --{0} {1} --key {2} --value {3}", param, NameOrId, key, value));
+            ExecuteLd($"action --{param} {nameOrId} --key {key} --value {value}");
         }
 
-        public void Scan(string param, string NameOrId, string file_path)
+        public static void Scan(string param, string nameOrId, string filePath)
         {
-            ExecuteLD(string.Format("scan --{0} {1} --file {2}", param, NameOrId, file_path));
+            ExecuteLd($"scan --{param} {nameOrId} --file {filePath}");
         }
 
-        public void SortWnd()
+        public static void SortWnd()
         {
-            ExecuteLD("sortWnd");
+            ExecuteLd("sortWnd");
         }
 
-        public void zoomIn(string param, string NameOrId)
+        public static void ZoomIn(string param, string nameOrId)
         {
-            ExecuteLD(string.Format("zoomIn --{0} {1}", param, NameOrId));
+            ExecuteLd($"zoomIn --{param} {nameOrId}");
         }
 
-        public void zoomOut(string param, string NameOrId)
+        public static void ZoomOut(string param, string nameOrId)
         {
-            ExecuteLD(string.Format("zoomOut --{0} {1}", param, NameOrId));
+            ExecuteLd($"zoomOut --{param} {nameOrId}");
         }
 
-        public void Pull(string param, string NameOrId, string remote_file_path, string local_file_path)
+        public static void Pull(string param, string nameOrId, string remoteFilePath, string localFilePath)
         {
-            ExecuteLD(string.Format(@"pull --{0} {1} --remote ""{2}"" --local ""{3}""", param, NameOrId, remote_file_path, local_file_path));
+            ExecuteLd($@"pull --{param} {nameOrId} --remote ""{remoteFilePath}"" --local ""{localFilePath}""");
         }
 
-        public void Push(string param, string NameOrId, string remote_file_path, string local_file_path)
+        public static void Push(string param, string nameOrId, string remoteFilePath, string localFilePath)
         {
-            ExecuteLD(string.Format(@"push --{0} {1} --remote ""{2}"" --local ""{3}""", param, NameOrId, remote_file_path, local_file_path));
+            ExecuteLd($@"push --{param} {nameOrId} --remote ""{remoteFilePath}"" --local ""{localFilePath}""");
         }
 
-        public void BackupApp(string param, string NameOrId, string Package_Name, string file_path)
+        public static void BackupApp(string param, string nameOrId, string packageName, string filePath)
         {
-            ExecuteLD(string.Format(@"backupapp --{0} {1} --packagename {2} --file ""{3}""", param, NameOrId, Package_Name, file_path));
+            ExecuteLd($@"backupapp --{param} {nameOrId} --packagename {packageName} --file ""{filePath}""");
         }
 
-        public void RestoreApp(string param, string NameOrId, string Package_Name, string file_path)
+        public static void RestoreApp(string param, string nameOrId, string packageName, string filePath)
         {
-            ExecuteLD(string.Format(@"restoreapp --{0} {1} --packagename {2} --file ""{3}""", param, NameOrId, Package_Name, file_path));
+            ExecuteLd($@"restoreapp --{param} {nameOrId} --packagename {packageName} --file ""{filePath}""");
         }
 
-        public void Golabal_Config(string param, string NameOrId, string fps, string audio, string fast_play, string clean_mode)
+        public static void GolabalConfig(string param, string nameOrId, string fps, string audio, string fastPlay,
+            string cleanMode)
         {
             //  [--fps <0~60>] [--audio <1 | 0>] [--fastplay <1 | 0>] [--cleanmode <1 | 0>]
-            ExecuteLD(string.Format("globalsetting --{0} {1} --audio {2} --fastplay {3} --cleanmode {4}", param, NameOrId, audio, fast_play, clean_mode));
+            ExecuteLd(
+                $"globalsetting --{param} {nameOrId} --audio {audio} --fastplay {fastPlay} --cleanmode {cleanMode}");
         }
 
-        public List<string> GetDevices()
+        public static List<string> GetDevices()
         {
-            string[] arr = ExecuteLD_Result("list").Trim().Split('\n');
-            for (int i = 0; i < arr.Length; i++)
+            var arr = ExecuteLdForResult("list").Trim().Split('\n');
+            for (var i = 0; i < arr.Length; i++)
             {
                 if (arr[i] == "")
                     return new List<string>();
                 arr[i] = arr[i].Trim();
             }
+
             //System.Windows.Forms.MessageBox.Show(string.Join("|", arr));
-            return arr.ToList<string>();
+            return arr.ToList();
         }
 
-        public List<string> GetDevices_Running()
+        public static List<string> GetDevicesRunning()
         {
-            string[] arr = ExecuteLD_Result("runninglist").Trim().Split('\n');
-            for (int i = 0; i < arr.Length; i++)
+            var arr = ExecuteLdForResult("runninglist").Trim().Split('\n');
+            for (var i = 0; i < arr.Length; i++)
             {
                 if (arr[i] == "")
                     return new List<string>();
                 arr[i] = arr[i].Trim();
             }
+
             //System.Windows.Forms.MessageBox.Show(string.Join("|", arr));
-            return arr.ToList<string>();
+            return arr.ToList();
         }
 
-        public bool IsDevice_Running(string param, string NameOrId)
+        public static bool IsDeviceRunning(string param, string nameOrId)
         {
-            string result = ExecuteLD_Result(string.Format("isrunning --{0} {1}", param, NameOrId)).Trim();
-            if (result == "running")
-                return true;
-            return false;
+            var result = ExecuteLdForResult($"isrunning --{param} {nameOrId}").Trim();
+            return result == "running";
         }
 
-        public List<LDevice> GetDevices2()
+        public static List<LDevice> GetDevices2()
         {
             try
             {
-                List<LDevice> listLDPlayer = new List<LDevice>();
-                string[] arr = ExecuteLD_Result("list2").Trim().Split('\n');
-                for (int i = 0; i < arr.Length; i++)
+                var listLdPlayer = new List<LDevice>();
+                var arr = ExecuteLdForResult("list2").Trim().Split('\n');
+                foreach (var i in arr)
                 {
-                    LDevice devices = new LDevice();
-                    string[] aDetail = arr[i].Trim().Split(',');
+                    var devices = new LDevice();
+                    var aDetail = i.Trim().Split(',');
                     devices.index = int.Parse(aDetail[0]);
                     devices.name = aDetail[1];
-                    devices.adb_id = "-1";
                     devices.topHandle = new IntPtr(Convert.ToInt32(aDetail[2], 16));
                     devices.bindHandle = new IntPtr(Convert.ToInt32(aDetail[3], 16));
                     devices.androidState = int.Parse(aDetail[4]);
                     devices.dnplayerPID = int.Parse(aDetail[5]);
                     devices.vboxPID = int.Parse(aDetail[6]);
-                    listLDPlayer.Add(devices);
+                    listLdPlayer.Add(devices);
                 }
+
                 //System.Windows.Forms.MessageBox.Show(string.Join("\n", arr));
-                return listLDPlayer;
+                return listLdPlayer;
             }
             catch
             {
@@ -257,19 +261,17 @@ namespace Auto_LDPlayer
             }
         }
 
-        public List<LDevice> GetDevices2_Running()
+        public static List<LDevice> GetDevices2Running()
         {
             try
             {
-                int j = 0;
-                List<string> list_adb_id = ADBHelper.GetDevices();
-                List<LDevice> listLDPlayer = new List<LDevice>();
-                List<string> device_running = GetDevices_Running();
-                string[] arr = ExecuteLD_Result("list2").Trim().Split('\n');
-                for (int i = 0; i < arr.Length; i++)
+                var listLdPlayer = new List<LDevice>();
+                var deviceRunning = GetDevicesRunning();
+                var arr = ExecuteLdForResult("list2").Trim().Split('\n');
+                foreach (var t in arr)
                 {
-                    LDevice devices = new LDevice();
-                    string[] aDetail = arr[i].Trim().Split(',');
+                    var devices = new LDevice();
+                    var aDetail = t.Trim().Split(',');
                     devices.index = int.Parse(aDetail[0]);
                     devices.name = aDetail[1];
                     devices.topHandle = new IntPtr(Convert.ToInt32(aDetail[2], 16));
@@ -277,14 +279,11 @@ namespace Auto_LDPlayer
                     devices.androidState = int.Parse(aDetail[4]);
                     devices.dnplayerPID = int.Parse(aDetail[5]);
                     devices.vboxPID = int.Parse(aDetail[6]);
-                    if (device_running.Contains(devices.name))
-                    {
-                        devices.adb_id = list_adb_id[j];
-                        listLDPlayer.Add(devices);
-                        j++;
-                    }
+                    if (!deviceRunning.Contains(devices.name)) continue;
+                    listLdPlayer.Add(devices);
                 }
-                return listLDPlayer;
+
+                return listLdPlayer;
             }
             catch
             {
@@ -293,10 +292,10 @@ namespace Auto_LDPlayer
             //System.Windows.Forms.MessageBox.Show(string.Join("\n", arr));
         }
 
-        public void ExecuteLD(string cmd)
+        public static void ExecuteLd(string cmd)
         {
-            Process p = new Process();
-            p.StartInfo.FileName = pathLD;
+            var p = new Process();
+            p.StartInfo.FileName = PathLd;
             p.StartInfo.Arguments = cmd;
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.StartInfo.UseShellExecute = false;
@@ -307,15 +306,15 @@ namespace Auto_LDPlayer
             p.Close();
         }
 
-        public string ExecuteLD_Result(string cmdCommand)
+        public static string ExecuteLdForResult(string cmdCommand, int timeout = 10000, int retry = 2)
         {
             string result;
             try
             {
-                Process process = new Process();
+                var process = new Process();
                 process.StartInfo = new ProcessStartInfo
                 {
-                    FileName = pathLD,
+                    FileName = PathLd,
                     Arguments = cmdCommand,
                     CreateNoWindow = true,
                     UseShellExecute = false,
@@ -323,57 +322,260 @@ namespace Auto_LDPlayer
                     RedirectStandardInput = true,
                     RedirectStandardOutput = true
                 };
-                process.Start();
-                process.WaitForExit();
-                string text = process.StandardOutput.ReadToEnd();
+                // process.WaitForExit();
+
+                while (retry >= 0)
+                {
+                    retry--;
+                    process.Start();
+                    if (!process.WaitForExit(timeout))
+                    {
+                        process.Kill();
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                var text = process.StandardOutput.ReadToEnd();
                 result = text;
             }
             catch
             {
                 result = null;
             }
+
             return result;
         }
 
+        public static Point GetScreenResolution(string param, string nameOrId)
+        {
+            var str1 = Adb(param, nameOrId, "shell dumpsys display | grep \"mCurrentDisplayRect\"");
+            var str2 = str1.Substring(str1.IndexOf("- ", StringComparison.Ordinal));
+            var strArray = str2.Substring(str2.IndexOf(' '), str2.IndexOf(')') - str2.IndexOf(' ')).Split(',');
+            return new Point(Convert.ToInt32(strArray[0].Trim()), Convert.ToInt32(strArray[1].Trim()));
+        }
+
+        public static void TapByPercent(string param, string nameOrId, double x, double y, int count = 1)
+        {
+            var screenResolution = GetScreenResolution(param, nameOrId);
+            var num1 = (int) (x * (screenResolution.X * 1.0 / 100.0));
+            var num2 = (int) (y * (screenResolution.Y * 1.0 / 100.0));
+            Tap(param, nameOrId, num1, num2, count);
+        }
+
+        public static void Tap(string param, string nameOrId, int x, int y, int count = 1)
+        {
+            var cmdCommand = $"shell input tap {x} {y}";
+            for (var index = 1; index < count; ++index)
+                cmdCommand += (" && " + cmdCommand);
+            Adb(param, nameOrId, cmdCommand, 200);
+        }
+
+        public static void PressKey(string param, string nameOrId, LdAdbKeyEvent key)
+        {
+            Adb(param, nameOrId, $"shell input keyevent {key}", 200);
+        }
+
+        public static void SwipeByPercent(string param, string nameOrId, double x1, double y1, double x2, double y2,
+            int duration = 100)
+        {
+            var screenResolution = GetScreenResolution(param, nameOrId);
+            var num1 = (int) (x1 * (screenResolution.X * 1.0 / 100.0));
+            var num2 = (int) (y1 * (screenResolution.Y * 1.0 / 100.0));
+            var num3 = (int) (x2 * (screenResolution.X * 1.0 / 100.0));
+            var num4 = (int) (y2 * (screenResolution.Y * 1.0 / 100.0));
+            Swipe(param, nameOrId, num1, num2, num3, num4, duration);
+        }
+
+        public static void Swipe(string param, string nameOrId, int x1, int y1, int x2, int y2, int duration = 100)
+        {
+            Adb(param, nameOrId, $"shell input swipe {x1} {y1} {x2} {y2} {duration}", 200);
+        }
+
+
+        public static void InputText(string param, string nameOrId, string text)
+        {
+            Adb(param, nameOrId,
+                $"shell input text \"{text.Replace(" ", "%s").Replace("&", "\\&").Replace("<", "\\<").Replace(">", "\\>").Replace("?", "\\?").Replace(":", "\\:").Replace("{", "\\{").Replace("}", "\\}").Replace("[", "\\[").Replace("]", "\\]").Replace("|", "\\|")}\""
+            );
+        }
+
+        public static void LongPress(string param, string nameOrId, int x, int y, int duration = 100)
+        {
+            Swipe(param, nameOrId, x, y, x, y, duration);
+        }
+
+        public static Bitmap ScreenShoot(string param, string nameOrId, bool isDeleteImageAfterCapture = true,
+            string fileName = "screenShoot.png")
+        {
+            var str1 = param + "_" + nameOrId;
+
+
+            var path = Path.GetFileNameWithoutExtension(fileName) + str1 + Path.GetExtension(fileName);
+            if (File.Exists(path))
+                try
+                {
+                    File.Delete(path);
+                }
+                catch (Exception)
+                {
+                    // ignored
+                }
+
+            var filename = Directory.GetCurrentDirectory() + "\\" + path;
+            var str2 = $"\"{Directory.GetCurrentDirectory().Replace("\\\\", "\\")}\"";
+            var cmdCommand1 = $"shell screencap -p \"/sdcard/{path}\"";
+            var cmdCommand2 = $"pull /sdcard/{path} {str2}";
+            Adb(param, nameOrId, cmdCommand1);
+            Adb(param, nameOrId, cmdCommand2);
+            Bitmap bitmap = null;
+            try
+            {
+                using (var original = new Bitmap(filename))
+                {
+                    bitmap = new Bitmap(original);
+                }
+            }
+            catch
+            {
+                // ignored
+            }
+
+            if (!isDeleteImageAfterCapture) return bitmap;
+            try
+            {
+                File.Delete(path);
+            }
+            catch
+            {
+                // ignored
+            }
+
+            try
+            {
+                Adb(param, nameOrId, $"shell \"rm /sdcard/{path}\"");
+            }
+            catch
+            {
+                // ignored
+            }
+
+            return bitmap;
+        }
+
+        public static void PlanModeOn(string param, string nameOrId, CancellationToken cancellationToken)
+        {
+            if (cancellationToken.IsCancellationRequested)
+                return;
+            Adb(param, nameOrId, " settings put global airplane_mode_on 1");
+            Adb(param, nameOrId, "am broadcast -a android.intent.action.AIRPLANE_MODE");
+        }
+
+        public static void PlanModeOff(string param, string nameOrId, CancellationToken cancellationToken)
+        {
+            if (cancellationToken.IsCancellationRequested)
+                return;
+            Adb(param, nameOrId, " settings put global airplane_mode_on 1");
+            Adb(param, nameOrId, "am broadcast -a android.intent.action.AIRPLANE_MODE");
+        }
+
+        public static void Delay(double delayTime)
+        {
+            for (var num = 0.0; num < delayTime; num += 100.0)
+                Thread.Sleep(TimeSpan.FromMilliseconds(100.0));
+        }
+
+        public static Point? FindImage(string param, string nameOrId, string imagePath, int count = 5)
+        {
+            var files = new DirectoryInfo(imagePath).GetFiles();
+            do
+            {
+                Bitmap mainBitmap = null;
+                var num = 3;
+                do
+                {
+                    try
+                    {
+                        mainBitmap = ScreenShoot(param, nameOrId);
+                        break;
+                    }
+                    catch (Exception)
+                    {
+                        --num;
+                        Delay(1000.0);
+                    }
+                } while (num > 0);
+
+                if (mainBitmap == null)
+                    return new Point?();
+                var image = new Point?();
+                foreach (var fileSystemInfo in files)
+                {
+                    var subBitmap = (Bitmap) Image.FromFile(fileSystemInfo.FullName);
+                    image = ImageScanOpenCV.FindOutPoint(mainBitmap, subBitmap);
+                    if (image.HasValue)
+                        break;
+                }
+
+                if (image.HasValue)
+                    return image;
+                Delay(2000.0);
+                --count;
+            } while (count > 0);
+
+            return new Point?();
+        }
+
+        public static bool FindImageAndClick(string param, string nameOrId, string imagePath, int count = 5)
+        {
+            var point = FindImage(param, nameOrId, imagePath, count);
+            if (!point.HasValue) return false;
+            Tap(param, nameOrId, point.Value.X, point.Value.Y);
+            return true;
+        }
+
+
         // Điều Hướng
-        public void Back(string deviceID)
+        public static void Back(string param, string nameOrId)
         {
-            ADBHelper.Key(deviceID, ADBKeyEvent.KEYCODE_BACK);
+            PressKey(param, nameOrId, LdAdbKeyEvent.KEYCODE_BACK);
         }
 
-        public void Home(string deviceID)
+        public static void Home(string param, string nameOrId)
         {
-            ADBHelper.Key(deviceID, ADBKeyEvent.KEYCODE_HOME);
+            PressKey(param, nameOrId, LdAdbKeyEvent.KEYCODE_HOME);
         }
 
-        public void Menu(string deviceID)
+        public static void Menu(string param, string nameOrId)
         {
-            ADBHelper.Key(deviceID, ADBKeyEvent.KEYCODE_APP_SWITCH);
+            PressKey(param, nameOrId, LdAdbKeyEvent.KEYCODE_APP_SWITCH);
         }
+
 
         //IMG OpenCV
-        public void Tap_Img(string deviceID, Bitmap ImgFind)
+        public static bool Tap_Img(string param, string nameOrId, Bitmap imgFind)
         {
-            Bitmap bm = (Bitmap)ImgFind.Clone();
-            var screen = ADBHelper.ScreenShoot(deviceID);
-            var Point = ImageScanOpenCV.FindOutPoint(screen, bm);
-            if (Point != null)
-            {
-                ADBHelper.Tap(deviceID, Point.Value.X, Point.Value.Y);
-                return;
-            }
+            var bm = (Bitmap) imgFind.Clone();
+            var screen = ScreenShoot(param, nameOrId);
+            var point = ImageScanOpenCV.FindOutPoint(screen, bm);
+            if (point == null) return false;
+            Tap(param, nameOrId, point.Value.X, point.Value.Y);
+            return true;
+
             //MessageBox.Show("Tìm không ra");
         }
 
         //Change Proxy
-        public void Change_Proxy(string deviceID, string ip_proxy, string port_proxy)
+        public static void ChangeProxy(string param, string nameOrId, string ipProxy, string portProxy)
         {
-            ADBHelper.ExecuteCMD(string.Format("adb -s {0} shell settings put global http_proxy {1}:{2}", deviceID, ip_proxy, port_proxy));
+            Adb(param, nameOrId, $"shell settings put global http_proxy {ipProxy}:{portProxy}");
         }
 
-        public void Remove_Proxy(string deviceID)
+        public static void RemoveProxy(string param, string nameOrId)
         {
-            ADBHelper.ExecuteCMD(string.Format("adb -s {0} shell settings put global http_proxy :0", deviceID));
+            Adb(param, nameOrId, "shell settings put global http_proxy :0");
         }
     }
 }
