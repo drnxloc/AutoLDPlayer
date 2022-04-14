@@ -1,7 +1,7 @@
 namespace Auto_LDPlayer
 {
 
-  public enum LdAdbKeyEvent
+  public enum LDKeyEvent
   {
     KEYCODE_0 = 0,
     KEYCODE_SOFT_LEFT = 1,

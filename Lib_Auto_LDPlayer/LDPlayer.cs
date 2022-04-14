@@ -1,15 +1,15 @@
-﻿using System;
+﻿using KAutoHelper;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using KAutoHelper;
 
 namespace Auto_LDPlayer
 {
-    public class LdPlayer
+    public class LDPlayer
     {
         public static string PathLd = @"C:\LDPlayer\LDPlayer4.0\ldconsole.exe";
 
@@ -373,7 +373,7 @@ namespace Auto_LDPlayer
             Adb(param, nameOrId, cmdCommand, 200);
         }
 
-        public static void PressKey(string param, string nameOrId, ADBKeyEvent key)
+        public static void PressKey(string param, string nameOrId, LDKeyEvent key)
         {
             Adb(param, nameOrId, $"shell input keyevent {key}", 200);
         }
@@ -540,17 +540,17 @@ namespace Auto_LDPlayer
         // Điều Hướng
         public static void Back(string param, string nameOrId)
         {
-            PressKey(param, nameOrId, ADBKeyEvent.KEYCODE_BACK);
+            PressKey(param, nameOrId, LDKeyEvent.KEYCODE_BACK);
         }
 
         public static void Home(string param, string nameOrId)
         {
-            PressKey(param, nameOrId, ADBKeyEvent.KEYCODE_HOME);
+            PressKey(param, nameOrId, LDKeyEvent.KEYCODE_HOME);
         }
 
         public static void Menu(string param, string nameOrId)
         {
-            PressKey(param, nameOrId, ADBKeyEvent.KEYCODE_APP_SWITCH);
+            PressKey(param, nameOrId, LDKeyEvent.KEYCODE_APP_SWITCH);
         }
 
 

@@ -38,7 +38,8 @@
     <Reference Include="Emgu.CV.World">
       <HintPath>..\..\Library\KAutoHelper V2\Update KautoHelper\Emgu.CV.World.dll</HintPath>
     </Reference>
-    <Reference Include="KAutoHelper">
+    <Reference Include="KAutoHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Library\KAutoHelper V2\Update KautoHelper\KAutoHelper.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
@@ -56,9 +57,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LDKeyEvent.cs" />
     <Compile Include="LDevice.cs" />
     <Compile Include="LDPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
