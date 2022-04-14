@@ -261,7 +261,7 @@ namespace Auto_LDPlayer
             }
         }
 
-        public static List<LDevice> GetDevices2_Running()
+        public static List<LDevice> GetDevices2Running()
         {
             try
             {
@@ -328,7 +328,14 @@ namespace Auto_LDPlayer
                 {
                     retry--;
                     process.Start();
-                    if (!process.WaitForExit(timeout)) process.Kill();
+                    if (!process.WaitForExit(timeout))
+                    {
+                        process.Kill();
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
 
                 var text = process.StandardOutput.ReadToEnd();
@@ -344,7 +351,7 @@ namespace Auto_LDPlayer
 
         public static Point GetScreenResolution(string param, string nameOrId)
         {
-            var str1 = Adb(param, nameOrId, "shell dumpsys display | Find \"mCurrentDisplayRect\"");
+            var str1 = Adb(param, nameOrId, "shell dumpsys display | grep \"mCurrentDisplayRect\"");
             var str2 = str1.Substring(str1.IndexOf("- ", StringComparison.Ordinal));
             var strArray = str2.Substring(str2.IndexOf(' '), str2.IndexOf(')') - str2.IndexOf(' ')).Split(',');
             return new Point(Convert.ToInt32(strArray[0].Trim()), Convert.ToInt32(strArray[1].Trim()));
@@ -362,13 +369,13 @@ namespace Auto_LDPlayer
         {
             var cmdCommand = $"shell input tap {x} {y}";
             for (var index = 1; index < count; ++index)
-                cmdCommand = cmdCommand + " && " + cmdCommand;
-            Adb(param, nameOrId, cmdCommand);
+                cmdCommand += (" && " + cmdCommand);
+            Adb(param, nameOrId, cmdCommand, 200);
         }
 
         public static void PressKey(string param, string nameOrId, LdAdbKeyEvent key)
         {
-            Adb(param, nameOrId, $"shell input keyevent {key}");
+            Adb(param, nameOrId, $"shell input keyevent {key}", 200);
         }
 
         public static void SwipeByPercent(string param, string nameOrId, double x1, double y1, double x2, double y2,
@@ -384,14 +391,15 @@ namespace Auto_LDPlayer
 
         public static void Swipe(string param, string nameOrId, int x1, int y1, int x2, int y2, int duration = 100)
         {
-            Adb(param, nameOrId, $"shell input swipe {x1} {y1} {x2} {y2} {duration}");
+            Adb(param, nameOrId, $"shell input swipe {x1} {y1} {x2} {y2} {duration}", 200);
         }
 
 
         public static void InputText(string param, string nameOrId, string text)
         {
             Adb(param, nameOrId,
-                $"shell input text \"{text.Replace(" ", "%s").Replace("&", "\\&").Replace("<", "\\<").Replace(">", "\\>").Replace("?", "\\?").Replace(":", "\\:").Replace("{", "\\{").Replace("}", "\\}").Replace("[", "\\[").Replace("]", "\\]").Replace("|", "\\|")}\"");
+                $"shell input text \"{text.Replace(" ", "%s").Replace("&", "\\&").Replace("<", "\\<").Replace(">", "\\>").Replace("?", "\\?").Replace(":", "\\:").Replace("{", "\\{").Replace("}", "\\}").Replace("[", "\\[").Replace("]", "\\]").Replace("|", "\\|")}\""
+            );
         }
 
         public static void LongPress(string param, string nameOrId, int x, int y, int duration = 100)
@@ -399,8 +407,7 @@ namespace Auto_LDPlayer
             Swipe(param, nameOrId, x, y, x, y, duration);
         }
 
-        public static Bitmap ScreenShoot(string param, string nameOrId,
-            bool isDeleteImageAfterCapture = true,
+        public static Bitmap ScreenShoot(string param, string nameOrId, bool isDeleteImageAfterCapture = true,
             string fileName = "screenShoot.png")
         {
             var str1 = param + "_" + nameOrId;
@@ -548,15 +555,15 @@ namespace Auto_LDPlayer
 
 
         //IMG OpenCV
-        public static void Tap_Img(string param, string nameOrId, Bitmap imgFind)
+        public static bool Tap_Img(string param, string nameOrId, Bitmap imgFind)
         {
             var bm = (Bitmap) imgFind.Clone();
             var screen = ScreenShoot(param, nameOrId);
             var point = ImageScanOpenCV.FindOutPoint(screen, bm);
-            if (point != null)
-            {
-                Tap(param, nameOrId, point.Value.X, point.Value.Y);
-            }
+            if (point == null) return false;
+            Tap(param, nameOrId, point.Value.X, point.Value.Y);
+            return true;
+
             //MessageBox.Show("Tìm không ra");
         }
 
