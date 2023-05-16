@@ -40,7 +40,7 @@ For the new Emgu Nuget package you do need to use PackageReference instead of th
 ```js
     LDPlayer.pathLD = "Your Path ldconsole.exe"; //VD: "C:\LDPlayer\LDPlayer4.0\ldconsole.exe"
     //Set ADB Your Path
-    ADBHelper.SetADBFolderPath(@"C:\LDPlayer\LDPlayer4.0");
+    KAutoHelper.ADBHelper.SetADBFolderPath(@"C:\LDPlayer\LDPlayer4.0");
 ```
 
 1. Initialization
