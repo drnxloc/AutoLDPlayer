@@ -7,6 +7,10 @@ Release Bao Gồm
 -   Emgu.CV.World.dll
 -   Auto_LDPlayer.dll
 
+# Demo
+
+![Hình minh họa](images/AutoLDPlayer.png)
+
 # Nuget
 
 ### Nuget: https://www.nuget.org/packages/Auto_LDPlayer
