@@ -19,8 +19,8 @@ PM> Install-Package Auto_LDPlayer
 
 ```js
 Note:
-    param => name, index. nameOrId => "Name LDPlayer Or Index LDPlayer"
-    deviceID get form cmd "adb devices" or used void "GetDevices2_Running()" return the variable "adb_id"
+param => name, index. nameOrId => "Name LDPlayer Or Index LDPlayer"
+deviceID get form cmd "adb devices" or used void "GetDevices2_Running()" return the variable "adb_id"
 ```
 
 ```
@@ -35,40 +35,43 @@ For the new Emgu Nuget package you do need to use PackageReference instead of th
 - These Emgu packages should now appear under your references and you should not see a package.config file.
 ```
 
-0. Set Path LDPlayer "ldconsole.exe"
+1. **Set Path LDPlayer "ldconsole.exe"**
 
 ```js
-    LDPlayer.pathLD = "Your Path ldconsole.exe"; //VD: "C:\LDPlayer\LDPlayer4.0\ldconsole.exe"
-    //Set ADB Your Path
-    KAutoHelper.ADBHelper.SetADBFolderPath(@"C:\LDPlayer\LDPlayer4.0");
+LDPlayer.pathLD = "Your Path ldconsole.exe"; //VD: "C:\LDPlayer\LDPlayer4.0\ldconsole.exe"
+//Set ADB Your Path
+KAutoHelper.ADBHelper.SetADBFolderPath(@"C:\LDPlayer\LDPlayer4.0");
 ```
 
-1. Initialization
+2. **Initialization**
 
 ```js
-   LDPlayer ldplayer = new LDPlayer();
+using Auto_LDPlayer;
+using Auto_LDPlayer.Enums;
 ```
 
-2. Manipulation Emulator
+3. **Example**
 
 ```js
-    void Open(LDType ldType, string nameOrId)
-
-    void OpenApp(LDType ldType, string nameOrId, string packageName) //Mở LD cùng app khi chạy
-
-    void Close(LDType ldType, string nameOrId)
-
-    void CloseAll()
-
-    void ReBoot(LDType ldType, string nameOrId)
+LDPlayer.Open(LDType.Name, "ld0")
+LDPlayer.Open(LDType.Id, "0")
 ```
+
+4. **Manipulation Emulator**
 
 ```js
-Exam: ldplayer.Open(LDType.Name, "ld0")
-ldplayer.Open(LDType.Id, "0")
+void Open(LDType ldType, string nameOrId)
+
+void OpenApp(LDType ldType, string nameOrId, string packageName) //Mở LD cùng app khi chạy
+
+void Close(LDType ldType, string nameOrId)
+
+void CloseAll()
+
+void ReBoot(LDType ldType, string nameOrId)
 ```
 
-3. Custom Emulator
+5. **Custom Emulator**
 
 ```js
 void Create(string name)
@@ -80,7 +83,7 @@ void Delete(LDType ldType, string nameOrId)
 void Rename(LDType ldType, string nameOrId, string titleNew)
 ```
 
-4. App
+6. **App**
 
 ```js
 void InstallAppFile(LDType ldType, string nameOrId, string fileName) //fileName trỏ tới file apk
@@ -94,7 +97,7 @@ void RunApp(LDType ldType, string nameOrId, string packageName)
 void KillApp(LDType ldType, string nameOrId, string packageName)
 ```
 
-5. Orther
+7. **Other**
 
 ```js
 void Locate(LDType ldType, string nameOrId, string Lng, string Lat) //Set Toạ Độ GPS
@@ -117,7 +120,7 @@ void ChangeProperty(LDType ldType, string nameOrId, string cmd)
     [--autorotate < 1 | 0 >]
     [--lockwindow < 1 | 0 >]
 
-    Exam:   ldplayer.Change_Property("name", "ld0", " --cpu 1 --memory 1024 --imei 123456789");
+    Exam:   LDPlayer.Change_Property("name", "ld0", " --cpu 1 --memory 1024 --imei 123456789");
 ```
 
 ```js
@@ -155,10 +158,10 @@ void RestoreApp(LDType ldType, string nameOrId, string packageName, string fileP
 ```js
 void GlobalConfig(LDType ldType, string nameOrId, string fps, string audio, string fastPlay, string cleanMode)
     [--fps <0~60>] [--audio <1 | 0>] [--fastplay <1 | 0>] [--cleanmode <1 | 0>]
-    Exam: ldplayer.Golabal_Config("name", "ld0", "60", "0", "0", "0");
+    Exam: LDPlayer.Golabal_Config("name", "ld0", "60", "0", "0", "0");
 ```
 
-5. Get List Devices
+8. **Get List Devices**
 
 ```js
 List<string> GetDevices()
@@ -172,7 +175,7 @@ List<LDevice> GetDevices2()
 List<LDevice> GetDevices2Running()
 ```
 
-6. Cmd
+9. **Cmd**
 
 ```js
 void ExecuteLD(string cmd)
@@ -180,7 +183,7 @@ void ExecuteLD(string cmd)
 string ExecuteLDResult(string cmdCommand)
 ```
 
-7. Directional
+10. **Directional**
 
 ```js
 void Back(string deviceID)
@@ -190,16 +193,16 @@ void Home(string deviceID)
 void Menu(string deviceID)
 ```
 
-8. Tap with OpenCV
+11. **Tap with OpenCV**
 
 ```js
 void TapImg(string deviceID, Bitmap imgFind)
 ```
 
-9. Change Proxy
+12. **Change Proxy**
 
 ```js
-    void ChangeProxy(string deviceID, string ipProxy, string portProxy)
+void ChangeProxy(string deviceID, string ipProxy, string portProxy)
 
-    void RemoveProxy(string deviceID)
+void RemoveProxy(string deviceID)
 ```
