@@ -23,6 +23,18 @@ Note:
     deviceID get form cmd "adb devices" or used void "GetDevices2_Running()" return the variable "adb_id"
 ```
 
+```
+For the new Emgu Nuget package you do need to use PackageReference instead of the traditional package.config.
+
+- Uninstall all NuGet Packages [This removes the package.config file]
+- Go to Tools --> Options --> NuGet Package Manager --> General
+- Change the default package management format to "PackageReference"
+- Check "allow format selection on first package install"
+- Click OK
+- Install Emgu.CV, Emgu.CV.Bitmap, Emgu.CV.UI and Emgu.CV.runtime.windows
+- These Emgu packages should now appear under your references and you should not see a package.config file.
+```
+
 0. Set Path LDPlayer "ldconsole.exe"
 
 ```js
