@@ -1,4 +1,6 @@
-﻿using KAutoHelper;
+﻿using Auto_LDPlayer.Enums;
+using Auto_LDPlayer.Extensions;
+using KAutoHelper;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,94 +13,94 @@ namespace Auto_LDPlayer
 {
     public class LDPlayer
     {
-        public static string PathLd = @"C:\LDPlayer\LDPlayer4.0\ldconsole.exe";
+        public static string PathLD = @"C:\LDPlayer\LDPlayer4.0\ldconsole.exe";
 
-        //----------------------Tương Tác Tab Giả Lập--------------------------------//
+        //----------------------Emulator Interaction--------------------------------//
 
-        //Nhóm 1 - Thao Tác
+        //Group 1 - Control
 
-        public static void Open(string param, string nameOrId)
+        public static void Open(LDType ldType, string nameOrId)
         {
-            ExecuteLd($"launch --{param} {nameOrId}");
+            ExecuteLD($"launch --{ldType.ToName()} {nameOrId}");
         }
 
-        public static void Open_App(string param, string nameOrId, string packageName)
+        public static void OpenApp(LDType ldType, string nameOrId, string packageName)
         {
-            ExecuteLd($"launchex --{param} {nameOrId} --packagename {packageName}");
+            ExecuteLD($"launchex --{ldType.ToName()} {nameOrId} --packagename {packageName}");
         }
 
-        public static void Close(string param, string nameOrId)
+        public static void Close(LDType ldType, string nameOrId)
         {
-            ExecuteLd($"quit --{param} {nameOrId}");
+            ExecuteLD($"quit --{ldType.ToName()} {nameOrId}");
         }
 
         public static void CloseAll()
         {
-            ExecuteLd("quitall");
+            ExecuteLD("quitall");
         }
 
-        public static void ReBoot(string param, string nameOrId)
+        public static void ReBoot(LDType ldType, string nameOrId)
         {
-            ExecuteLd($"reboot --{param} {nameOrId}");
+            ExecuteLD($"reboot --{ldType.ToName()} {nameOrId}");
         }
 
-        //Nhóm 2 - Tuỳ Chỉnh Thêm
+        //Group 2 - More Custom
 
         public static void Create(string name)
         {
-            ExecuteLd("add --name " + name);
+            ExecuteLD("add --name " + name);
         }
 
         public static void Copy(string name, string fromNameOrId)
         {
-            ExecuteLd($"copy --name {name} --from {fromNameOrId}");
+            ExecuteLD($"copy --name {name} --from {fromNameOrId}");
         }
 
-        public static void Delete(string param, string nameOrId)
+        public static void Delete(LDType ldType, string nameOrId)
         {
-            ExecuteLd($"remove --{param} {nameOrId}");
+            ExecuteLD($"remove --{ldType.ToName()} {nameOrId}");
         }
 
-        public static void ReName(string param, string nameOrId, string titleNew)
+        public static void Rename(LDType ldType, string nameOrId, string titleNew)
         {
-            ExecuteLd($"rename --{param} {nameOrId} --title {titleNew}");
+            ExecuteLD($"rename --{ldType.ToName()} {nameOrId} --title {titleNew}");
         }
 
         //Nhóm 3 - Change Setting
 
-        public static void InstallApp_File(string param, string nameOrId, string fileName)
+        public static void InstallAppFile(LDType ldType, string nameOrId, string fileName)
         {
-            ExecuteLd($@"installapp --{param} {nameOrId} --filename ""{fileName}""");
+            ExecuteLD($@"installapp --{ldType.ToName()} {nameOrId} --filename ""{fileName}""");
         }
 
-        public static void InstallApp_Package(string param, string nameOrId, string packageName)
+        public static void InstallAppPackage(LDType ldType, string nameOrId, string packageName)
         {
-            ExecuteLd($"installapp --{param} {nameOrId} --packagename {packageName}");
+            ExecuteLD($"installapp --{ldType.ToName()} {nameOrId} --packagename {packageName}");
         }
 
-        public static void UnInstallApp(string param, string nameOrId, string packageName)
+        public static void UninstallApp(LDType ldType, string nameOrId, string packageName)
         {
-            ExecuteLd($"uninstallapp --{param} {nameOrId} --packagename {packageName}");
+            ExecuteLD($"uninstallapp --{ldType.ToName()} {nameOrId} --packagename {packageName}");
         }
 
-        public static void RunApp(string param, string nameOrId, string packageName)
+        public static void RunApp(LDType ldType, string nameOrId, string packageName)
         {
-            ExecuteLd($"runapp --{param} {nameOrId} --packagename {packageName}");
+            ExecuteLD($"runapp --{ldType.ToName()} {nameOrId} --packagename {packageName}");
         }
 
-        public static void KillApp(string param, string nameOrId, string packageName)
+        public static void KillApp(LDType ldType, string nameOrId, string packageName)
         {
-            ExecuteLd($"killapp --{param} {nameOrId} --packagename {packageName}");
+            ExecuteLD($"killapp --{ldType.ToName()} {nameOrId} --packagename {packageName}");
         }
 
-        public static void Locate(string param, string nameOrId, string lng, string lat)
+        public static void Locate(LDType ldType, string nameOrId, string lng, string lat)
         {
-            ExecuteLd($"locate --{param} {nameOrId} --LLI {lng},{lat}");
+            ExecuteLD($"locate --{ldType.ToName()} {nameOrId} --LLI {lng},{lat}");
         }
 
-        public static void Change_Property(string param, string nameOrId, string cmd)
+        public static void ChangeProperty(LDType ldType, string nameOrId, string cmd)
         {
-            ExecuteLd($"modify --{param} {nameOrId} {cmd}");
+            ExecuteLD($"modify --{ldType.ToName()} {nameOrId} {cmd}");
             //[--resolution ]
             //[--cpu < 1 | 2 | 3 | 4 >]
             //[--memory < 512 | 1024 | 2048 | 4096 | 8192 >]
@@ -114,93 +116,93 @@ namespace Auto_LDPlayer
             //[--lockwindow < 1 | 0 >]
         }
 
-        public static void SetProp(string param, string nameOrId, string key, string value)
+        public static void SetProp(LDType ldType, string nameOrId, string key, string value)
         {
-            ExecuteLd($"setprop --{param} {nameOrId} --key {key} --value {value}");
+            ExecuteLD($"setprop --{ldType.ToName()} {nameOrId} --key {key} --value {value}");
         }
 
-        public static string GetProp(string param, string nameOrId, string key)
+        public static string GetProp(LDType ldType, string nameOrId, string key)
         {
-            return ExecuteLdForResult($"getprop --{param} {nameOrId} --key {key}");
+            return ExecuteLDForResult($"getprop --{ldType.ToName()} {nameOrId} --key {key}");
         }
 
-        public static string Adb(string param, string nameOrId, string cmd, int timeout = 10000, int retry = 1)
+        public static string Adb(LDType ldType, string nameOrId, string cmd, int timeout = 10000, int retry = 1)
         {
-            return ExecuteLdForResult($"adb --{param} \"{nameOrId}\" --command \"{cmd}\"", timeout,
+            return ExecuteLDForResult($"adb --{ldType.ToName()} \"{nameOrId}\" --command \"{cmd}\"", timeout,
                 retry);
         }
 
-        public static void DownCpu(string param, string nameOrId, string rate)
+        public static void DownCpu(LDType ldType, string nameOrId, string rate)
         {
-            ExecuteLd($"downcpu --{param} {nameOrId} --rate {rate}");
+            ExecuteLD($"downcpu --{ldType.ToName()} {nameOrId} --rate {rate}");
         }
 
-        public static void Backup(string param, string nameOrId, string filePath)
+        public static void Backup(LDType ldType, string nameOrId, string filePath)
         {
-            ExecuteLd($@"backup --{param} {nameOrId} --file ""{filePath}""");
+            ExecuteLD($@"backup --{ldType.ToName()} {nameOrId} --file ""{filePath}""");
         }
 
-        public static void Restore(string param, string nameOrId, string filePath)
+        public static void Restore(LDType ldType, string nameOrId, string filePath)
         {
-            ExecuteLd($@"restore --{param} {nameOrId} --file ""{filePath}""");
+            ExecuteLD($@"restore --{ldType.ToName()} {nameOrId} --file ""{filePath}""");
         }
 
-        public static void Action(string param, string nameOrId, string key, string value)
+        public static void Action(LDType ldType, string nameOrId, string key, string value)
         {
-            ExecuteLd($"action --{param} {nameOrId} --key {key} --value {value}");
+            ExecuteLD($"action --{ldType.ToName()} {nameOrId} --key {key} --value {value}");
         }
 
-        public static void Scan(string param, string nameOrId, string filePath)
+        public static void Scan(LDType ldType, string nameOrId, string filePath)
         {
-            ExecuteLd($"scan --{param} {nameOrId} --file {filePath}");
+            ExecuteLD($"scan --{ldType.ToName()} {nameOrId} --file {filePath}");
         }
 
         public static void SortWnd()
         {
-            ExecuteLd("sortWnd");
+            ExecuteLD("sortWnd");
         }
 
-        public static void ZoomIn(string param, string nameOrId)
+        public static void ZoomIn(LDType ldType, string nameOrId)
         {
-            ExecuteLd($"zoomIn --{param} {nameOrId}");
+            ExecuteLD($"zoomIn --{ldType.ToName()} {nameOrId}");
         }
 
-        public static void ZoomOut(string param, string nameOrId)
+        public static void ZoomOut(LDType ldType, string nameOrId)
         {
-            ExecuteLd($"zoomOut --{param} {nameOrId}");
+            ExecuteLD($"zoomOut --{ldType.ToName()} {nameOrId}");
         }
 
-        public static void Pull(string param, string nameOrId, string remoteFilePath, string localFilePath)
+        public static void Pull(LDType ldType, string nameOrId, string remoteFilePath, string localFilePath)
         {
-            ExecuteLd($@"pull --{param} {nameOrId} --remote ""{remoteFilePath}"" --local ""{localFilePath}""");
+            ExecuteLD($@"pull --{ldType.ToName()} {nameOrId} --remote ""{remoteFilePath}"" --local ""{localFilePath}""");
         }
 
-        public static void Push(string param, string nameOrId, string remoteFilePath, string localFilePath)
+        public static void Push(LDType ldType, string nameOrId, string remoteFilePath, string localFilePath)
         {
-            ExecuteLd($@"push --{param} {nameOrId} --remote ""{remoteFilePath}"" --local ""{localFilePath}""");
+            ExecuteLD($@"push --{ldType.ToName()} {nameOrId} --remote ""{remoteFilePath}"" --local ""{localFilePath}""");
         }
 
-        public static void BackupApp(string param, string nameOrId, string packageName, string filePath)
+        public static void BackupApp(LDType ldType, string nameOrId, string packageName, string filePath)
         {
-            ExecuteLd($@"backupapp --{param} {nameOrId} --packagename {packageName} --file ""{filePath}""");
+            ExecuteLD($@"backupapp --{ldType.ToName()} {nameOrId} --packagename {packageName} --file ""{filePath}""");
         }
 
-        public static void RestoreApp(string param, string nameOrId, string packageName, string filePath)
+        public static void RestoreApp(LDType ldType, string nameOrId, string packageName, string filePath)
         {
-            ExecuteLd($@"restoreapp --{param} {nameOrId} --packagename {packageName} --file ""{filePath}""");
+            ExecuteLD($@"restoreapp --{ldType.ToName()} {nameOrId} --packagename {packageName} --file ""{filePath}""");
         }
 
-        public static void GolabalConfig(string param, string nameOrId, string fps, string audio, string fastPlay,
+        public static void GlobalConfig(LDType ldType, string nameOrId, string fps, string audio, string fastPlay,
             string cleanMode)
         {
             //  [--fps <0~60>] [--audio <1 | 0>] [--fastplay <1 | 0>] [--cleanmode <1 | 0>]
-            ExecuteLd(
-                $"globalsetting --{param} {nameOrId} --audio {audio} --fastplay {fastPlay} --cleanmode {cleanMode}");
+            ExecuteLD(
+                $"globalsetting --{ldType.ToName()} {nameOrId} --audio {audio} --fastplay {fastPlay} --cleanmode {cleanMode}");
         }
 
         public static List<string> GetDevices()
         {
-            var arr = ExecuteLdForResult("list").Trim().Split('\n');
+            var arr = ExecuteLDForResult("list").Trim().Split('\n');
             for (var i = 0; i < arr.Length; i++)
             {
                 if (arr[i] == "")
@@ -214,7 +216,7 @@ namespace Auto_LDPlayer
 
         public static List<string> GetDevicesRunning()
         {
-            var arr = ExecuteLdForResult("runninglist").Trim().Split('\n');
+            var arr = ExecuteLDForResult("runninglist").Trim().Split('\n');
             for (var i = 0; i < arr.Length; i++)
             {
                 if (arr[i] == "")
@@ -226,9 +228,9 @@ namespace Auto_LDPlayer
             return arr.ToList();
         }
 
-        public static bool IsDeviceRunning(string param, string nameOrId)
+        public static bool IsDeviceRunning(LDType ldType, string nameOrId)
         {
-            var result = ExecuteLdForResult($"isrunning --{param} {nameOrId}").Trim();
+            var result = ExecuteLDForResult($"isrunning --{ldType.ToName()} {nameOrId}").Trim();
             return result == "running";
         }
 
@@ -236,8 +238,8 @@ namespace Auto_LDPlayer
         {
             try
             {
-                var listLdPlayer = new List<LDevice>();
-                var arr = ExecuteLdForResult("list2").Trim().Split('\n');
+                var listLDPlayer = new List<LDevice>();
+                var arr = ExecuteLDForResult("list2").Trim().Split('\n');
                 foreach (var i in arr)
                 {
                     var devices = new LDevice();
@@ -249,11 +251,11 @@ namespace Auto_LDPlayer
                     devices.androidState = int.Parse(aDetail[4]);
                     devices.dnplayerPID = int.Parse(aDetail[5]);
                     devices.vboxPID = int.Parse(aDetail[6]);
-                    listLdPlayer.Add(devices);
+                    listLDPlayer.Add(devices);
                 }
 
                 //System.Windows.Forms.MessageBox.Show(string.Join("\n", arr));
-                return listLdPlayer;
+                return listLDPlayer;
             }
             catch
             {
@@ -265,9 +267,9 @@ namespace Auto_LDPlayer
         {
             try
             {
-                var listLdPlayer = new List<LDevice>();
+                var listLDPlayer = new List<LDevice>();
                 var deviceRunning = GetDevicesRunning();
-                var arr = ExecuteLdForResult("list2").Trim().Split('\n');
+                var arr = ExecuteLDForResult("list2").Trim().Split('\n');
                 foreach (var t in arr)
                 {
                     var devices = new LDevice();
@@ -280,10 +282,10 @@ namespace Auto_LDPlayer
                     devices.dnplayerPID = int.Parse(aDetail[5]);
                     devices.vboxPID = int.Parse(aDetail[6]);
                     if (!deviceRunning.Contains(devices.name)) continue;
-                    listLdPlayer.Add(devices);
+                    listLDPlayer.Add(devices);
                 }
 
-                return listLdPlayer;
+                return listLDPlayer;
             }
             catch
             {
@@ -292,10 +294,10 @@ namespace Auto_LDPlayer
             //System.Windows.Forms.MessageBox.Show(string.Join("\n", arr));
         }
 
-        public static void ExecuteLd(string cmd)
+        public static void ExecuteLD(string cmd)
         {
             var p = new Process();
-            p.StartInfo.FileName = PathLd;
+            p.StartInfo.FileName = PathLD;
             p.StartInfo.Arguments = cmd;
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.StartInfo.UseShellExecute = false;
@@ -306,7 +308,7 @@ namespace Auto_LDPlayer
             p.Close();
         }
 
-        public static string ExecuteLdForResult(string cmdCommand, int timeout = 10000, int retry = 2)
+        public static string ExecuteLDForResult(string cmdCommand, int timeout = 10000, int retry = 2)
         {
             string result;
             try
@@ -314,7 +316,7 @@ namespace Auto_LDPlayer
                 var process = new Process();
                 process.StartInfo = new ProcessStartInfo
                 {
-                    FileName = PathLd,
+                    FileName = PathLD,
                     Arguments = cmdCommand,
                     CreateNoWindow = true,
                     UseShellExecute = false,
@@ -349,68 +351,68 @@ namespace Auto_LDPlayer
             return result;
         }
 
-        public static Point GetScreenResolution(string param, string nameOrId)
+        public static Point GetScreenResolution(LDType ldType, string nameOrId)
         {
-            var str1 = Adb(param, nameOrId, "shell dumpsys display | grep \"mCurrentDisplayRect\"");
+            var str1 = Adb(ldType, nameOrId, "shell dumpsys display | grep \"mCurrentDisplayRect\"");
             var str2 = str1.Substring(str1.IndexOf("- ", StringComparison.Ordinal));
             var strArray = str2.Substring(str2.IndexOf(' '), str2.IndexOf(')') - str2.IndexOf(' ')).Split(',');
             return new Point(Convert.ToInt32(strArray[0].Trim()), Convert.ToInt32(strArray[1].Trim()));
         }
 
-        public static void TapByPercent(string param, string nameOrId, double x, double y, int count = 1)
+        public static void TapByPercent(LDType ldType, string nameOrId, double x, double y, int count = 1)
         {
-            var screenResolution = GetScreenResolution(param, nameOrId);
+            var screenResolution = GetScreenResolution(ldType, nameOrId);
             var num1 = (int) (x * (screenResolution.X * 1.0 / 100.0));
             var num2 = (int) (y * (screenResolution.Y * 1.0 / 100.0));
-            Tap(param, nameOrId, num1, num2, count);
+            Tap(ldType, nameOrId, num1, num2, count);
         }
 
-        public static void Tap(string param, string nameOrId, int x, int y, int count = 1)
+        public static void Tap(LDType ldType, string nameOrId, int x, int y, int count = 1)
         {
             var cmdCommand = $"shell input tap {x} {y}";
             for (var index = 1; index < count; ++index)
                 cmdCommand += (" && " + cmdCommand);
-            Adb(param, nameOrId, cmdCommand, 200);
+            Adb(ldType, nameOrId, cmdCommand, 200);
         }
 
-        public static void PressKey(string param, string nameOrId, LDKeyEvent key)
+        public static void PressKey(LDType ldType, string nameOrId, LDKeyEvent key)
         {
-            Adb(param, nameOrId, $"shell input keyevent {key}", 200);
+            Adb(ldType, nameOrId, $"shell input keyevent {key}", 200);
         }
 
-        public static void SwipeByPercent(string param, string nameOrId, double x1, double y1, double x2, double y2,
+        public static void SwipeByPercent(LDType ldType, string nameOrId, double x1, double y1, double x2, double y2,
             int duration = 100)
         {
-            var screenResolution = GetScreenResolution(param, nameOrId);
+            var screenResolution = GetScreenResolution(ldType, nameOrId);
             var num1 = (int) (x1 * (screenResolution.X * 1.0 / 100.0));
             var num2 = (int) (y1 * (screenResolution.Y * 1.0 / 100.0));
             var num3 = (int) (x2 * (screenResolution.X * 1.0 / 100.0));
             var num4 = (int) (y2 * (screenResolution.Y * 1.0 / 100.0));
-            Swipe(param, nameOrId, num1, num2, num3, num4, duration);
+            Swipe(ldType, nameOrId, num1, num2, num3, num4, duration);
         }
 
-        public static void Swipe(string param, string nameOrId, int x1, int y1, int x2, int y2, int duration = 100)
+        public static void Swipe(LDType ldType, string nameOrId, int x1, int y1, int x2, int y2, int duration = 100)
         {
-            Adb(param, nameOrId, $"shell input swipe {x1} {y1} {x2} {y2} {duration}", 200);
+            Adb(ldType, nameOrId, $"shell input swipe {x1} {y1} {x2} {y2} {duration}", 200);
         }
 
 
-        public static void InputText(string param, string nameOrId, string text)
+        public static void InputText(LDType ldType, string nameOrId, string text)
         {
-            Adb(param, nameOrId,
+            Adb(ldType, nameOrId,
                 $"shell input text \"{text.Replace(" ", "%s").Replace("&", "\\&").Replace("<", "\\<").Replace(">", "\\>").Replace("?", "\\?").Replace(":", "\\:").Replace("{", "\\{").Replace("}", "\\}").Replace("[", "\\[").Replace("]", "\\]").Replace("|", "\\|")}\""
             );
         }
 
-        public static void LongPress(string param, string nameOrId, int x, int y, int duration = 100)
+        public static void LongPress(LDType ldType, string nameOrId, int x, int y, int duration = 100)
         {
-            Swipe(param, nameOrId, x, y, x, y, duration);
+            Swipe(ldType, nameOrId, x, y, x, y, duration);
         }
 
-        public static Bitmap ScreenShoot(string param, string nameOrId, bool isDeleteImageAfterCapture = true,
+        public static Bitmap ScreenShoot(LDType ldType, string nameOrId, bool isDeleteImageAfterCapture = true,
             string fileName = "screenShoot.png")
         {
-            var str1 = param + "_" + nameOrId;
+            var str1 = ldType + "_" + nameOrId;
 
 
             var path = Path.GetFileNameWithoutExtension(fileName) + str1 + Path.GetExtension(fileName);
@@ -428,8 +430,8 @@ namespace Auto_LDPlayer
             var str2 = $"\"{Directory.GetCurrentDirectory().Replace("\\\\", "\\")}\"";
             var cmdCommand1 = $"shell screencap -p \"/sdcard/{path}\"";
             var cmdCommand2 = $"pull /sdcard/{path} {str2}";
-            Adb(param, nameOrId, cmdCommand1);
-            Adb(param, nameOrId, cmdCommand2);
+            Adb(ldType, nameOrId, cmdCommand1);
+            Adb(ldType, nameOrId, cmdCommand2);
             Bitmap bitmap = null;
             try
             {
@@ -455,7 +457,7 @@ namespace Auto_LDPlayer
 
             try
             {
-                Adb(param, nameOrId, $"shell \"rm /sdcard/{path}\"");
+                Adb(ldType, nameOrId, $"shell \"rm /sdcard/{path}\"");
             }
             catch
             {
@@ -465,20 +467,20 @@ namespace Auto_LDPlayer
             return bitmap;
         }
 
-        public static void PlanModeOn(string param, string nameOrId, CancellationToken cancellationToken)
+        public static void PlanModeOn(LDType ldType, string nameOrId, CancellationToken cancellationToken)
         {
             if (cancellationToken.IsCancellationRequested)
                 return;
-            Adb(param, nameOrId, " settings put global airplane_mode_on 1");
-            Adb(param, nameOrId, "am broadcast -a android.intent.action.AIRPLANE_MODE");
+            Adb(ldType, nameOrId, " settings put global airplane_mode_on 1");
+            Adb(ldType, nameOrId, "am broadcast -a android.intent.action.AIRPLANE_MODE");
         }
 
-        public static void PlanModeOff(string param, string nameOrId, CancellationToken cancellationToken)
+        public static void PlanModeOff(LDType ldType, string nameOrId, CancellationToken cancellationToken)
         {
             if (cancellationToken.IsCancellationRequested)
                 return;
-            Adb(param, nameOrId, " settings put global airplane_mode_on 1");
-            Adb(param, nameOrId, "am broadcast -a android.intent.action.AIRPLANE_MODE");
+            Adb(ldType, nameOrId, " settings put global airplane_mode_on 1");
+            Adb(ldType, nameOrId, "am broadcast -a android.intent.action.AIRPLANE_MODE");
         }
 
         public static void Delay(double delayTime)
@@ -487,7 +489,7 @@ namespace Auto_LDPlayer
                 Thread.Sleep(TimeSpan.FromMilliseconds(100.0));
         }
 
-        public static Point? FindImage(string param, string nameOrId, string imagePath, int count = 5)
+        public static Point? FindImage(LDType ldType, string nameOrId, string imagePath, int count = 5)
         {
             var files = new DirectoryInfo(imagePath).GetFiles();
             do
@@ -498,7 +500,7 @@ namespace Auto_LDPlayer
                 {
                     try
                     {
-                        mainBitmap = ScreenShoot(param, nameOrId);
+                        mainBitmap = ScreenShoot(ldType, nameOrId);
                         break;
                     }
                     catch (Exception)
@@ -528,54 +530,54 @@ namespace Auto_LDPlayer
             return new Point?();
         }
 
-        public static bool FindImageAndClick(string param, string nameOrId, string imagePath, int count = 5)
+        public static bool FindImageAndClick(LDType ldType, string nameOrId, string imagePath, int count = 5)
         {
-            var point = FindImage(param, nameOrId, imagePath, count);
+            var point = FindImage(ldType, nameOrId, imagePath, count);
             if (!point.HasValue) return false;
-            Tap(param, nameOrId, point.Value.X, point.Value.Y);
+            Tap(ldType, nameOrId, point.Value.X, point.Value.Y);
             return true;
         }
 
 
-        // Điều Hướng
-        public static void Back(string param, string nameOrId)
+        // Navigation
+        public static void Back(LDType ldType, string nameOrId)
         {
-            PressKey(param, nameOrId, LDKeyEvent.KEYCODE_BACK);
+            PressKey(ldType, nameOrId, LDKeyEvent.KEYCODE_BACK);
         }
 
-        public static void Home(string param, string nameOrId)
+        public static void Home(LDType ldType, string nameOrId)
         {
-            PressKey(param, nameOrId, LDKeyEvent.KEYCODE_HOME);
+            PressKey(ldType, nameOrId, LDKeyEvent.KEYCODE_HOME);
         }
 
-        public static void Menu(string param, string nameOrId)
+        public static void Menu(LDType ldType, string nameOrId)
         {
-            PressKey(param, nameOrId, LDKeyEvent.KEYCODE_APP_SWITCH);
+            PressKey(ldType, nameOrId, LDKeyEvent.KEYCODE_APP_SWITCH);
         }
 
 
         //IMG OpenCV
-        public static bool Tap_Img(string param, string nameOrId, Bitmap imgFind)
+        public static bool TapImg(LDType ldType, string nameOrId, Bitmap imgFind)
         {
             var bm = (Bitmap) imgFind.Clone();
-            var screen = ScreenShoot(param, nameOrId);
+            var screen = ScreenShoot(ldType, nameOrId);
             var point = ImageScanOpenCV.FindOutPoint(screen, bm);
             if (point == null) return false;
-            Tap(param, nameOrId, point.Value.X, point.Value.Y);
+            Tap(ldType, nameOrId, point.Value.X, point.Value.Y);
             return true;
 
             //MessageBox.Show("Tìm không ra");
         }
 
         //Change Proxy
-        public static void ChangeProxy(string param, string nameOrId, string ipProxy, string portProxy)
+        public static void ChangeProxy(LDType ldType, string nameOrId, string ipProxy, string portProxy)
         {
-            Adb(param, nameOrId, $"shell settings put global http_proxy {ipProxy}:{portProxy}");
+            Adb(ldType, nameOrId, $"shell settings put global http_proxy {ipProxy}:{portProxy}");
         }
 
-        public static void RemoveProxy(string param, string nameOrId)
+        public static void RemoveProxy(LDType ldType, string nameOrId)
         {
-            Adb(param, nameOrId, "shell settings put global http_proxy :0");
+            Adb(ldType, nameOrId, "shell settings put global http_proxy :0");
         }
     }
 }

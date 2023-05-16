@@ -19,7 +19,7 @@ PM> Install-Package Auto_LDPlayer
 
 ```js
 Note:
-    param => name, index. NameOrId => "Name LDPlayer Or Index LDPlayer"
+    param => name, index. nameOrId => "Name LDPlayer Or Index LDPlayer"
     deviceID get form cmd "adb devices" or used void "GetDevices2_Running()" return the variable "adb_id"
 ```
 
@@ -40,56 +40,56 @@ Note:
 2. Manipulation Emulator
 
 ```js
-    void Open(string param, string NameOrId)
+    void Open(LDType ldType, string nameOrId)
 
-    void Open_App(string param, string NameOrId, string Package_Name) //Mở LD cùng app khi chạy
+    void OpenApp(LDType ldType, string nameOrId, string packageName) //Mở LD cùng app khi chạy
 
-    void Close(string param, string NameOrId)
+    void Close(LDType ldType, string nameOrId)
 
     void CloseAll()
 
-    void ReBoot(string param, string NameOrId)
+    void ReBoot(LDType ldType, string nameOrId)
 ```
 
 ```js
-Exam: ldplayer.Open('name', 'ld0')
-ldplayer.Open('index', '0')
+Exam: ldplayer.Open(LDType.Name, "ld0")
+ldplayer.Open(LDType.Id, "0")
 ```
 
 3. Custom Emulator
 
 ```js
-void Create(string Name)
+void Create(string name)
 
-void Copy(string Name, string From_NameOrId)
+void Copy(string name, string fromNameOrId)
 
-void Delete(string param, string NameOrId)
+void Delete(LDType ldType, string nameOrId)
 
-void ReName(string param, string NameOrId, string title_new)
+void Rename(LDType ldType, string nameOrId, string titleNew)
 ```
 
 4. App
 
 ```js
-void InstallApp_File(string param, string NameOrId, string File_Name) //File_Name trỏ tới file apk
+void InstallAppFile(LDType ldType, string nameOrId, string fileName) //fileName trỏ tới file apk
 
-void InstallApp_Package(string param, string NameOrId, string Package_Name) //Cài qua LD Store, hơi dỏm, tốt nhất tự cài apk
+void InstallAppPackage(LDType ldType, string nameOrId, string packageName) //Cài qua LD Store, hơi dỏm, tốt nhất tự cài apk
 
-void UnInstallApp(string param, string NameOrId, string Package_Name)
+void UninstallApp(LDType ldType, string nameOrId, string packageName)
 
-void RunApp(string param, string NameOrId, string Package_Name)
+void RunApp(LDType ldType, string nameOrId, string packageName)
 
-void KillApp(string param, string NameOrId, string Package_Name)
+void KillApp(LDType ldType, string nameOrId, string packageName)
 ```
 
 5. Orther
 
 ```js
-void Locate(string param, string NameOrId, string Lng, string Lat) //Set Toạ Độ GPS
+void Locate(LDType ldType, string nameOrId, string Lng, string Lat) //Set Toạ Độ GPS
 ```
 
 ```js
-void Change_Property(string param, string NameOrId, string cmd)
+void ChangeProperty(LDType ldType, string nameOrId, string cmd)
     cmd use:
     [--resolution ]
     [--cpu < 1 | 2 | 3 | 4 >]
@@ -109,39 +109,39 @@ void Change_Property(string param, string NameOrId, string cmd)
 ```
 
 ```js
-void SetProp(string param, string NameOrId, string key, string value)
+void SetProp(LDType ldType, string nameOrId, string key, string value)
 
-string GetProp(string param, string NameOrId, string key)
+string GetProp(LDType ldType, string nameOrId, string key)
 
-string ADB(string param, string NameOrId, string cmd)
+string ADB(LDType ldType, string nameOrId, string cmd)
 
-void DownCPU(string param, string NameOrId, string rate)
+void DownCPU(LDType ldType, string nameOrId, string rate)
 
-void Backup(string param, string NameOrId, string file_path)
+void Backup(LDType ldType, string nameOrId, string filePath)
 
-void Restore(string param, string NameOrId, string file_path)
+void Restore(LDType ldType, string nameOrId, string filePath)
 
-void Action(string param, string NameOrId, string key, string value)
+void Action(LDType ldType, string nameOrId, string key, string value)
 
-void Scan(string param, string NameOrId, string file_path)
+void Scan(LDType ldType, string nameOrId, string filePath)
 
 void SortWnd() //Sắp Xếp Tab Giả Lập
 
-void zoomIn(string param, string NameOrId) //Phóng to
+void zoomIn(LDType ldType, string nameOrId) //Phóng to
 
-void zoomOut(string param, string NameOrId) //Phóng nhỏ lại
+void zoomOut(LDType ldType, string nameOrId) //Phóng nhỏ lại
 
-void Pull(string param, string NameOrId, string remote_file_path, string local_file_path)
+void Pull(LDType ldType, string nameOrId, string remoteFilePath, string localFilePath)
 
-void Push(string param, string NameOrId, string remote_file_path, string local_file_path)
+void Push(LDType ldType, string nameOrId, string remoteFilePath, string localFilePath)
 
-void BackupApp(string param, string NameOrId, string Package_Name, string file_path)
+void BackupApp(LDType ldType, string nameOrId, string packageName, string filePath)
 
-void RestoreApp(string param, string NameOrId, string Package_Name, string file_path)
+void RestoreApp(LDType ldType, string nameOrId, string packageName, string filePath)
 ```
 
 ```js
-void Golabal_Config(string param, string NameOrId, string fps, string audio, string fast_play, string clean_mode)
+void GlobalConfig(LDType ldType, string nameOrId, string fps, string audio, string fastPlay, string cleanMode)
     [--fps <0~60>] [--audio <1 | 0>] [--fastplay <1 | 0>] [--cleanmode <1 | 0>]
     Exam: ldplayer.Golabal_Config("name", "ld0", "60", "0", "0", "0");
 ```
@@ -151,13 +151,13 @@ void Golabal_Config(string param, string NameOrId, string fps, string audio, str
 ```js
 List<string> GetDevices()
 
-List<string> GetDevices_Running()
+List<string> GetDevicesRunning()
 
-bool IsDevice_Running(string param, string NameOrId)
+bool IsDeviceRunning(LDType ldType, string nameOrId)
 
-List<Info_Devices> GetDevices2()
+List<LDevice> GetDevices2()
 
-List<Info_Devices> GetDevices2Running()
+List<LDevice> GetDevices2Running()
 ```
 
 6. Cmd
@@ -165,7 +165,7 @@ List<Info_Devices> GetDevices2Running()
 ```js
 void ExecuteLD(string cmd)
 
-string ExecuteLD_Result(string cmdCommand)
+string ExecuteLDResult(string cmdCommand)
 ```
 
 7. Directional
@@ -181,13 +181,13 @@ void Menu(string deviceID)
 8. Tap with OpenCV
 
 ```js
-void Tap_Img(string deviceID, Bitmap ImgFind)
+void TapImg(string deviceID, Bitmap imgFind)
 ```
 
 9. Change Proxy
 
 ```js
-    void Change_Proxy(string deviceID, string ip_proxy, string port_proxy)
+    void ChangeProxy(string deviceID, string ipProxy, string portProxy)
 
-    void Remove_Proxy(string deviceID)
+    void RemoveProxy(string deviceID)
 ```

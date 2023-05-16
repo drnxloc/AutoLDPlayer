@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "t/7si8j2HOBshBEcmZ58WzdcR31cNbcpNeTotjVxghAwLWrMAKNa4TCk1SPW5gZZyOvqsv8WHYa6JXIWHRwqRg==",
+  "success": true,
+  "projectFilePath": "F:\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xuanl\\.nuget\\packages\\emgu.cv\\4.7.0.5276\\emgu.cv.4.7.0.5276.nupkg.sha512",
+    "C:\\Users\\xuanl\\.nuget\\packages\\emgu.cv.bitmap\\4.7.0.5276\\emgu.cv.bitmap.4.7.0.5276.nupkg.sha512",
+    "C:\\Users\\xuanl\\.nuget\\packages\\emgu.cv.runtime.windows\\4.7.0.5276\\emgu.cv.runtime.windows.4.7.0.5276.nupkg.sha512",
+    "C:\\Users\\xuanl\\.nuget\\packages\\emgu.cv.ui\\4.7.0.5276\\emgu.cv.ui.4.7.0.5276.nupkg.sha512",
+    "C:\\Users\\xuanl\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.arm64\\19.35.32217.1\\emgu.runtime.windows.msvc.rt.arm64.19.35.32217.1.nupkg.sha512",
+    "C:\\Users\\xuanl\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x64\\19.35.32217.1\\emgu.runtime.windows.msvc.rt.x64.19.35.32217.1.nupkg.sha512",
+    "C:\\Users\\xuanl\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x86\\19.35.32217.1\\emgu.runtime.windows.msvc.rt.x86.19.35.32217.1.nupkg.sha512",
+    "C:\\Users\\xuanl\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\xuanl\\.nuget\\packages\\system.drawing.primitives\\4.3.0\\system.drawing.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\xuanl\\.nuget\\packages\\system.runtime\\4.3.1\\system.runtime.4.3.1.nupkg.sha512",
+    "C:\\Users\\xuanl\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation\\4.3.0\\system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512",
+    "C:\\Users\\xuanl\\.nuget\\packages\\zedgraph\\5.1.7\\zedgraph.5.1.7.nupkg.sha512"
+  ],
+  "logs": []
+}
