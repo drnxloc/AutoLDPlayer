@@ -18,13 +18,7 @@ AutoLDPlayer Includes:
 PM> Install-Package Auto_LDPlayer
 ```
 
-# List Command
-
-```js
-Note:
-param => name, index. nameOrId => "Name LDPlayer Or Index LDPlayer"
-deviceID get form cmd "adb devices" or used void "GetDevices2_Running()" return the variable "adb_id"
-```
+# Fix error: Couldn't install package
 
 ```
 For the new Emgu Nuget package you do need to use PackageReference instead of the traditional package.config.
@@ -36,6 +30,14 @@ For the new Emgu Nuget package you do need to use PackageReference instead of th
 - Click OK
 - Install Emgu.CV, Emgu.CV.Bitmap, Emgu.CV.UI and Emgu.CV.runtime.windows
 - These Emgu packages should now appear under your references and you should not see a package.config file.
+```
+
+# List Command
+
+```js
+Note:
+param => name, index. nameOrId => "Name LDPlayer Or Index LDPlayer"
+deviceID get form cmd "adb devices" or used void "GetDevices2_Running()" return the variable "adb_id"
 ```
 
 1. **Set Path LDPlayer "ldconsole.exe"**
