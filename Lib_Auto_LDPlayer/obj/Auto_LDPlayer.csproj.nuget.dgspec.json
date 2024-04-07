@@ -1,59 +1,59 @@
 {
   "format": 1,
   "restore": {
-    "F:\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj": {}
+    "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj": {}
   },
   "projects": {
-    "F:\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj": {
+    "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
+        "projectUniqueName": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
         "projectName": "Auto_LDPlayer",
-        "projectPath": "F:\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
+        "projectPath": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
         "packagesPath": "C:\\Users\\xuanl\\.nuget\\packages\\",
-        "outputPath": "F:\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\obj\\",
+        "outputPath": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\xuanl\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net462"
+          "net48"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net462": {
+          "net48": {
             "projectReferences": {}
           }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net462": {
+        "net48": {
           "dependencies": {
-            "Emgu.CV": {
+            "EMGU.CV": {
               "target": "Package",
-              "version": "[4.7.0.5276, )"
+              "version": "[4.8.1.5350, )"
             },
-            "Emgu.CV.UI": {
+            "KAutoHelper_Kteam": {
               "target": "Package",
-              "version": "[4.7.0.5276, )"
-            },
-            "Emgu.CV.runtime.windows": {
-              "target": "Package",
-              "version": "[4.7.0.5276, )"
+              "version": "[1.0.1.2, )"
             },
             "System.Drawing.Common": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[8.0.3, )"
             },
             "System.Drawing.Primitives": {
               "target": "Package",
@@ -72,6 +72,20 @@
               "version": "[5.1.7, )"
             }
           }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
         }
       }
     }
