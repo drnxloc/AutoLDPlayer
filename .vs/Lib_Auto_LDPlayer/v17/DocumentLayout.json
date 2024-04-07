@@ -3,8 +3,14 @@
   "WorkspaceRootPath": "D:\\Dev\\C#\\AutoLDPlayer\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Auto_LDPlayer||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|d:\\dev\\c#\\autoldplayer\\lib_auto_ldplayer\\ldplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|solutionrelative:lib_auto_ldplayer\\ldplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|d:\\dev\\c#\\autoldplayer\\lib_auto_ldplayer\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,6 +29,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Auto_LDPlayer",
+              "DocumentMoniker": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
+              "RelativeDocumentMoniker": "Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
+              "ToolTip": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
+              "RelativeToolTip": "Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-07T02:22:11.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "LDPlayer.cs",
               "DocumentMoniker": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\LDPlayer.cs",
               "RelativeDocumentMoniker": "Lib_Auto_LDPlayer\\LDPlayer.cs",
