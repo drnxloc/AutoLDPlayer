@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.8": {
+    ".NETFramework,Version=v4.7.1": {
       "Emgu.CV/4.8.1.5350": {
         "type": "package",
         "dependencies": {
@@ -321,7 +321,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.8/win": {
+    ".NETFramework,Version=v4.7.1/win": {
       "Emgu.CV/4.8.1.5350": {
         "type": "package",
         "dependencies": {
@@ -631,7 +631,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.8/win-arm64": {
+    ".NETFramework,Version=v4.7.1/win-arm64": {
       "Emgu.CV/4.8.1.5350": {
         "type": "package",
         "dependencies": {
@@ -941,7 +941,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.8/win-x64": {
+    ".NETFramework,Version=v4.7.1/win-x64": {
       "Emgu.CV/4.8.1.5350": {
         "type": "package",
         "dependencies": {
@@ -1251,7 +1251,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.8/win-x86": {
+    ".NETFramework,Version=v4.7.1/win-x86": {
       "Emgu.CV/4.8.1.5350": {
         "type": "package",
         "dependencies": {
@@ -2155,7 +2155,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETFramework,Version=v4.8": [
+    ".NETFramework,Version=v4.7.1": [
       "EMGU.CV >= 4.8.1.5350",
       "KAutoHelper_Kteam >= 1.0.1.2",
       "System.Drawing.Common >= 8.0.3",
@@ -2188,14 +2188,14 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net48"
+        "net471"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net48": {
+        "net471": {
           "projectReferences": {}
         }
       },
@@ -2206,7 +2206,7 @@
       }
     },
     "frameworks": {
-      "net48": {
+      "net471": {
         "dependencies": {
           "EMGU.CV": {
             "target": "Package",

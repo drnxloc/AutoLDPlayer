@@ -23,14 +23,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net48"
+          "net471"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net48": {
+          "net471": {
             "projectReferences": {}
           }
         },
@@ -41,7 +41,7 @@
         }
       },
       "frameworks": {
-        "net48": {
+        "net471": {
           "dependencies": {
             "EMGU.CV": {
               "target": "Package",

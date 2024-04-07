@@ -192,3 +192,15 @@ D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Text.Encodings.Web.d
 D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Text.Json.dll
 D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Threading.Tasks.Extensions.dll
 D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.ValueTuple.dll
+D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Data.Common.dll
+D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Diagnostics.StackTrace.dll
+D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Diagnostics.Tracing.dll
+D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Globalization.Extensions.dll
+D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.IO.Compression.dll
+D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Net.Http.dll
+D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Net.Sockets.dll
+D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Runtime.Serialization.Primitives.dll
+D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Security.Cryptography.Algorithms.dll
+D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Security.SecureString.dll
+D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Threading.Overlapped.dll
+D:\Dev\C#\AutoLDPlayer\Lib_Auto_LDPlayer\bin\Release\System.Xml.XPath.XDocument.dll

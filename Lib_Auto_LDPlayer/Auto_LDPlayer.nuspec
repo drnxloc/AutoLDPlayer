@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+   <id>Auto_LDPlayer</id>
+    <version>1.1.0</version>
+    <title>Auto_LDPlayer</title>
+    <authors>Drnxloc</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <icon>images\icon.png</icon>
+    <projectUrl>https://github.com/drnxloc/AutoLDPlayer</projectUrl>
+    <description>Library support LDPlayer.</description>
+    <releaseNotes>LDPlayer Library</releaseNotes>
+    <copyright>Drnxloc</copyright>
+    <tags>AutoLDPlayer ADB</tags>
+	<dependencies>
+		<dependency id="Emgu.CV" version="4.8.1.5350" />
+		<dependency id="KAutoHelper_Kteam" version="1.0.1.2" />
+	</dependencies>
+  </metadata>
+  <files>
+	<file src="..\icon.png" target="images\" />
+  </files>
+</package>
