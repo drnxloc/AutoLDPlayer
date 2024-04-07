@@ -3,14 +3,32 @@
   "WorkspaceRootPath": "D:\\Dev\\C#\\AutoLDPlayer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Auto_LDPlayer||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|d:\\dev\\c#\\autoldplayer\\lib_auto_ldplayer\\extensions\\enumextensions .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|solutionrelative:lib_auto_ldplayer\\extensions\\enumextensions .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|d:\\dev\\c#\\autoldplayer\\lib_auto_ldplayer\\ldplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|d:\\dev\\c#\\autoldplayer\\lib_auto_ldplayer\\ldevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|solutionrelative:lib_auto_ldplayer\\ldevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|D:\\Dev\\C#\\AutoLDPlayer\\lib_auto_ldplayer\\enums\\ldtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|solutionrelative:lib_auto_ldplayer\\enums\\ldtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|D:\\Dev\\C#\\AutoLDPlayer\\lib_auto_ldplayer\\enums\\ldkeyevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|solutionrelative:lib_auto_ldplayer\\enums\\ldkeyevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|D:\\Dev\\C#\\AutoLDPlayer\\lib_auto_ldplayer\\ldplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|solutionrelative:lib_auto_ldplayer\\ldplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|d:\\dev\\c#\\autoldplayer\\lib_auto_ldplayer\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.nuspec||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Lib_Auto_LDPlayer\\Auto_LDPlayer.nuspec||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|D:\\Dev\\C#\\AutoLDPlayer\\lib_auto_ldplayer\\images\\icon.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{F1EC9EE9-6A49-48FF-8CAA-5FB7E57F2A35}|Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj|solutionrelative:lib_auto_ldplayer\\images\\icon.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,27 +47,87 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Auto_LDPlayer",
-              "DocumentMoniker": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
-              "RelativeDocumentMoniker": "Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
-              "ToolTip": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
-              "RelativeToolTip": "Lib_Auto_LDPlayer\\Auto_LDPlayer.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-04-07T02:22:11.498Z",
+              "Title": "EnumExtensions .cs",
+              "DocumentMoniker": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Extensions\\EnumExtensions .cs",
+              "RelativeDocumentMoniker": "Lib_Auto_LDPlayer\\Extensions\\EnumExtensions .cs",
+              "ToolTip": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Extensions\\EnumExtensions .cs",
+              "RelativeToolTip": "Lib_Auto_LDPlayer\\Extensions\\EnumExtensions .cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T03:29:59.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LDType.cs",
+              "DocumentMoniker": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Enums\\LDType.cs",
+              "RelativeDocumentMoniker": "Lib_Auto_LDPlayer\\Enums\\LDType.cs",
+              "ToolTip": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Enums\\LDType.cs",
+              "RelativeToolTip": "Lib_Auto_LDPlayer\\Enums\\LDType.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T03:19:47.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LDKeyEvent.cs",
+              "DocumentMoniker": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Enums\\LDKeyEvent.cs",
+              "RelativeDocumentMoniker": "Lib_Auto_LDPlayer\\Enums\\LDKeyEvent.cs",
+              "ToolTip": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Enums\\LDKeyEvent.cs",
+              "RelativeToolTip": "Lib_Auto_LDPlayer\\Enums\\LDKeyEvent.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAAAFoAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T03:16:12.258Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "LDevice.cs",
+              "DocumentMoniker": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\LDevice.cs",
+              "RelativeDocumentMoniker": "Lib_Auto_LDPlayer\\LDevice.cs",
+              "ToolTip": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\LDevice.cs",
+              "RelativeToolTip": "Lib_Auto_LDPlayer\\LDevice.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAA+wDcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T03:16:09.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Auto_LDPlayer.nuspec",
+              "DocumentMoniker": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.nuspec",
+              "RelativeDocumentMoniker": "Lib_Auto_LDPlayer\\Auto_LDPlayer.nuspec",
+              "ToolTip": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\Auto_LDPlayer.nuspec",
+              "RelativeToolTip": "Lib_Auto_LDPlayer\\Auto_LDPlayer.nuspec",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-07T02:46:54.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "icon.png",
+              "DocumentMoniker": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\images\\icon.png",
+              "RelativeDocumentMoniker": "Lib_Auto_LDPlayer\\images\\icon.png",
+              "ToolTip": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\images\\icon.png",
+              "RelativeToolTip": "Lib_Auto_LDPlayer\\images\\icon.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-04-07T02:44:34.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "LDPlayer.cs",
               "DocumentMoniker": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\LDPlayer.cs",
               "RelativeDocumentMoniker": "Lib_Auto_LDPlayer\\LDPlayer.cs",
               "ToolTip": "D:\\Dev\\C#\\AutoLDPlayer\\Lib_Auto_LDPlayer\\LDPlayer.cs",
               "RelativeToolTip": "Lib_Auto_LDPlayer\\LDPlayer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAMAAAA",
+              "ViewState": "AQIAAD0CAAAAAAAAAAAuwEUCAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T02:10:09.12Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-07T02:10:09.12Z"
             }
           ]
         }

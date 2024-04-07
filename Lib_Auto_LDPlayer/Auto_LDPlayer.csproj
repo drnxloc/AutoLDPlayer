@@ -30,7 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-	<PackageIcon>icon.png</PackageIcon>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Enums\LDType.cs" />
     <Compile Include="Extensions\EnumExtensions .cs" />
-    <Compile Include="LDKeyEvent.cs" />
+    <Compile Include="Enums\LDKeyEvent.cs" />
     <Compile Include="LDevice.cs" />
     <Compile Include="LDPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,7 +56,7 @@
     <Content Include="images\icon.png" />
   </ItemGroup>
   <ItemGroup>
-   <None Include="images\icon.png" Pack="true" PackagePath=""/>
+    <None Include="images\icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EMGU.CV">

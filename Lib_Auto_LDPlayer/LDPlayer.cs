@@ -66,7 +66,7 @@ namespace Auto_LDPlayer
             ExecuteLD($"rename --{ldType.ToName()} {nameOrId} --title {titleNew}");
         }
 
-        //Nhóm 3 - Change Setting
+        //Group 3 - Change Setting
 
         public static void InstallAppFile(LDType ldType, string nameOrId, string fileName)
         {
@@ -566,7 +566,7 @@ namespace Auto_LDPlayer
             Tap(ldType, nameOrId, point.Value.X, point.Value.Y);
             return true;
 
-            //MessageBox.Show("Tìm không ra");
+            //MessageBox.Show("Can't find it");
         }
 
         //Change Proxy
